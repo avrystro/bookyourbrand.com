@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Book Your Brand</title>
+<meta name="description" content="Published books by David Lloyd Strauss and clients of Book Your Brand. Ghost writing, author coaching, and publishing services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #c9a55c;
+  --gold-light: #dcc088;
+  --gold-dark: #a8863d;
+  --navy: #1e2a3a;
+  --charcoal: #141821;
+  --deep-black: #0c0f16;
+  --cream: #f5f0e8;
+  --warm-gray: #9a9590;
+  --text-light: #d4d0cc;
+  --text-muted: #8a8580;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --nav-height: 72px;
+  --max-width: 1140px;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
+
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  background: var(--deep-black);
+  color: var(--text-light);
+}
+
+h1, h2, h3, h4, h5 { font-family: var(--font-heading); line-height: 1.15; color: #fff; }
+a { text-decoration: none; color: inherit; transition: color 0.25s, opacity 0.25s; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+section { padding: 100px 0; }
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 620px;
+  line-height: 1.7;
+}
+
+/* Nav */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  background: rgba(12, 15, 22, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+nav .container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.nav-brand { display: flex; align-items: center; gap: 12px; }
+.nav-brand-text { font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: #fff; }
+.nav-brand-text span { color: var(--gold); }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.6); letter-spacing: 0.3px; transition: color 0.25s; }
+.nav-links a:hover { color: #fff; }
+.nav-links a.active { color: var(--gold); }
+.nav-cta {
+  background: var(--gold); color: var(--deep-black) !important; padding: 10px 24px;
+  border-radius: 4px; font-weight: 600 !important; letter-spacing: 0.5px;
+  text-transform: uppercase; font-size: 12px !important;
+}
+.nav-cta:hover { background: var(--gold-light); color: var(--deep-black) !important; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+.nav-toggle span { width: 24px; height: 2px; background: #fff; transition: all 0.3s; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body);
+  font-size: 14px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase;
+  padding: 16px 32px; border-radius: 4px; border: none; cursor: pointer; transition: all 0.3s ease;
+}
+.btn-primary { background: var(--gold); color: var(--deep-black); }
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(201,165,92,0.25); }
+.btn-outline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Page hero */
+.page-hero {
+  padding: 120px 0 60px;
+  background: var(--charcoal);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 120%;
+  background: radial-gradient(ellipse, rgba(201,165,92,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-hero h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+.page-hero h1 em { color: var(--gold); font-style: italic; }
+.page-hero p {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Category section */
+.category-section { padding: 80px 0; }
+.category-section:nth-child(odd) { background: var(--deep-black); }
+.category-section:nth-child(even) { background: var(--charcoal); }
+
+.category-header {
+  margin-bottom: 48px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+.category-header h2 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700;
+}
+.category-count {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Book grid */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.book-card {
+  display: block;
+  transition: transform 0.3s;
+}
+.book-card:hover { transform: translateY(-8px); }
+
+.book-cover {
+  aspect-ratio: 2 / 3;
+  border-radius: 4px 8px 8px 4px;
+  overflow: hidden;
+  position: relative;
+  background: var(--navy);
+  box-shadow:
+    -4px 0 0 rgba(30,42,58,0.7),
+    -7px 0 0 rgba(30,42,58,0.4),
+    0 12px 40px rgba(0,0,0,0.3);
+  margin-bottom: 16px;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.6));
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px;
+}
+.book-card:hover .book-cover-overlay { opacity: 1; }
+
+.book-cover-cta {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.book-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.book-author {
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.book-author.placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* CTA section */
+.cta-section {
+  background: var(--charcoal);
+  text-align: center;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(201,165,92,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-content { position: relative; z-index: 1; }
+.cta-section h2 {
+  font-size: clamp(32px, 4.5vw, 52px);
+  margin-bottom: 20px;
+}
+.cta-section h2 em { color: var(--gold); font-style: italic; }
+.cta-description {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* Footer */
+footer {
+  background: var(--deep-black);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 48px 0 32px;
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+.footer-brand-text { font-family: var(--font-heading); font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+.footer-brand-text span { color: var(--gold); }
+.footer-brand-description { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; max-width: 320px; }
+.footer-heading { font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; margin-bottom: 20px; }
+.footer-links a { display: block; font-size: 15px; color: var(--text-muted); padding: 6px 0; transition: color 0.25s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; }
+.footer-copyright { font-size: 14px; color: var(--warm-gray); }
+.footer-legal { display: flex; gap: 24px; }
+.footer-legal a { font-size: 14px; color: var(--warm-gray); }
+.footer-legal a:hover { color: var(--gold); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .book-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-links.active {
+    display: flex; flex-direction: column; position: fixed;
+    top: var(--nav-height); left: 0; right: 0; bottom: 0;
+    background: rgba(12,15,22,0.98); padding: 40px 24px; gap: 24px; z-index: 999;
+  }
+  .nav-links.active a { font-size: 18px; color: #fff; }
+  .book-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .page-hero { padding: 96px 0 48px; }
+  section, .category-section { padding: 64px 0; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+}
+@media (max-width: 480px) {
+  .book-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+  .cta-buttons .btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-text">Book Your <span>Brand</span></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#process">Process</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact" class="nav-cta">Book a Call</a>
+    </div>
+    <div class="nav-toggle" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="section-label">Portfolio</div>
+    <h1>Books We've <em>Brought to Life</em></h1>
+    <p>From first-time authors to seasoned speakers, these are the stories we've helped tell. Every book on this page was written, coached, or published through Book Your Brand.</p>
+  </div>
+</section>
+
+<!-- DAVID'S BOOKS -->
+<section class="category-section">
+  <div class="container">
+    <div class="category-header">
+      <h2>David's Books</h2>
+      <span class="category-count">4 titles</span>
+    </div>
+    <div class="book-grid">
+
+      <a href="books/footsteps-after-the-fall.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/footsteps-after-the-fall.webp" alt="Footsteps After the Fall by David Lloyd Strauss" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>Footsteps After the Fall</h3>
+          <div class="book-author">David Lloyd Strauss</div>
+        </div>
+      </a>
+
+      <a href="books/dancing-with-energy-vampires.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/dancing-with-energy-vampires.jpg" alt="Dancing with Energy Vampires by David Lloyd Strauss" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>Dancing with Energy Vampires</h3>
+          <div class="book-author">David Lloyd Strauss</div>
+        </div>
+      </a>
+
+      <a href="books/second-mouse-gets-the-cheese.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/second-mouse-gets-the-cheese.webp" alt="Second Mouse Gets the Cheese by David Lloyd Strauss" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>Second Mouse Gets the Cheese</h3>
+          <div class="book-author">David Lloyd Strauss</div>
+        </div>
+      </a>
+
+      <a href="books/what-if-today-were-the-day.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/what-if-today.webp" alt="What If Today Were the Day? by David Lloyd Strauss" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>What If Today Were the Day?</h3>
+          <div class="book-author">David Lloyd Strauss</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT PORTFOLIO -->
+<section class="category-section">
+  <div class="container">
+    <div class="category-header">
+      <h2>Client Portfolio</h2>
+      <span class="category-count">13 titles</span>
+    </div>
+    <div class="book-grid">
+
+      <a href="books/sabotage-to-success.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/sabotage-to-success.webp" alt="Sabotage to Success" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>Sabotage to Success</h3>
+          <div class="book-author placeholder">Author details coming soon</div>
+        </div>
+      </a>
+
+      <a href="books/one-big-life.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/one-big-life.jpg" alt="One Big Life" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>One Big Life</h3>
+          <div class="book-author placeholder">Author details coming soon</div>
+        </div>
+      </a>
+
+      <a href="books/stroke-of-love.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/stroke-of-love.jpg" alt="Stroke of Love" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>Stroke of Love</h3>
+          <div class="book-author placeholder">Author details coming soon</div>
+        </div>
+      </a>
+
+      <a href="books/embrace-special-needs.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/embrace-special-needs.jpg" alt="Embrace Special Needs" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>Embrace Special Needs</h3>
+          <div class="book-author placeholder">Author details coming soon</div>
+        </div>
+      </a>
+
+      <a href="books/from-drifting-to-winning.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/from-drifting-to-winning.webp" alt="From Drifting to Winning" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>From Drifting to Winning</h3>
+          <div class="book-author placeholder">Author details coming soon</div>
+        </div>
+      </a>
+
+      <a href="books/unchained-wealth.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/unchained-wealth.webp" alt="Unchained Wealth" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>Unchained Wealth</h3>
+          <div class="book-author placeholder">Author details coming soon</div>
+        </div>
+      </a>
+
+      <a href="books/in-search-of-a-way-out.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/in-search-of-a-way-out.webp" alt="In Search of a Way Out" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>In Search of a Way Out</h3>
+          <div class="book-author placeholder">Author details coming soon</div>
+        </div>
+      </a>
+
+      <a href="books/old-new-true.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/old-new-true.jpg" alt="Old, New, True" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>Old, New, True</h3>
+          <div class="book-author placeholder">Author details coming soon</div>
+        </div>
+      </a>
+
+      <a href="books/damon.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/damon.png" alt="Damon" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>Damon</h3>
+          <div class="book-author placeholder">Author details coming soon</div>
+        </div>
+      </a>
+
+      <a href="books/7-ideas-that-changed-the-world.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/7-ideas-that-changed-the-world.webp" alt="7 Ideas that Changed the World" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>7 Ideas that Changed the World</h3>
+          <div class="book-author placeholder">Author details coming soon</div>
+        </div>
+      </a>
+
+      <a href="books/who-are-you-fooling.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/who-are-you-fooling.webp" alt="Who Are You Fooling" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>Who Are You Fooling</h3>
+          <div class="book-author placeholder">Author details coming soon</div>
+        </div>
+      </a>
+
+      <a href="books/valentines-detox.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/valentines-detox.webp" alt="Valentine's Detox" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>Valentine's Detox</h3>
+          <div class="book-author placeholder">Author details coming soon</div>
+        </div>
+      </a>
+
+      <a href="books/tgw.html" class="book-card">
+        <div class="book-cover">
+          <img src="assets/images/tgw.jpg" alt="TGW" loading="lazy">
+          <div class="book-cover-overlay"><span class="book-cover-cta">View Details</span></div>
+        </div>
+        <div class="book-info">
+          <h3>TGW</h3>
+          <div class="book-author placeholder">Author details coming soon</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <div class="section-label">Your Story Is Next</div>
+      <h2>Ready to Join This <em>Library?</em></h2>
+      <p class="cta-description">Every book on this page started as a conversation. Yours can too. Book a free consultation with David and let's talk about your story.</p>
+      <div class="cta-buttons">
+        <a href="index.html#contact" class="btn btn-primary">Book a Free Consultation</a>
+        <a href="index.html#process" class="btn btn-outline">See How It Works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-text">Book Your <span>Brand</span></div>
+        <p class="footer-brand-description">Premium ghost writing and author coaching by David Lloyd Strauss. Turning entrepreneurs, thought leaders, and visionaries into published bestselling authors.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Navigate</div>
+        <div class="footer-links">
+          <a href="index.html#services">Services</a>
+          <a href="index.html#process">Process</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="index.html#about">About David</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Services</div>
+        <div class="footer-links">
+          <a href="index.html#services">Ghost Writing</a>
+          <a href="index.html#services">Author Coaching</a>
+          <a href="index.html#services">Editing</a>
+          <a href="index.html#services">Publishing</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <div class="footer-links">
+          <a href="mailto:coaching@davidstrauss.com">coaching@davidstrauss.com</a>
+          <a href="index.html#contact">Book a Consultation</a>
+          <a href="index.html#faq">FAQ</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copyright">&copy; 2026 Book Your Brand. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleNav() { document.getElementById('navLinks').classList.toggle('active'); }
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => document.getElementById('navLinks').classList.remove('active'));
+});
+</script>
+</body>
+</html>
