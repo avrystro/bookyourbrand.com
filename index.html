@@ -259,8 +259,8 @@ nav .container {
 
 .hero .container {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 40px;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
   align-items: center;
 }
 
@@ -348,9 +348,11 @@ nav .container {
 }
 
 .hero-image img {
-  height: 560px;
-  width: auto;
-  max-width: none;
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+  object-position: center top;
   filter: drop-shadow(0 20px 40px rgba(20, 24, 33, 0.1));
 }
 
@@ -642,69 +644,64 @@ nav .container {
 }
 
 /* ========================================
-   INVESTMENT
+   BOOK TYPES
    ======================================== */
-.investment {
+.book-types {
   padding: 120px 0;
   background: var(--paper-warm);
 }
 
-.investment-header {
+.book-types-header {
   text-align: center;
   margin-bottom: 16px;
 }
 
-.investment-note {
+.book-types-note {
   text-align: center;
   font-size: 16px;
   color: var(--ink-fade);
-  max-width: 480px;
+  max-width: 560px;
   margin: 0 auto 64px;
   line-height: 1.7;
 }
 
-.investment-grid {
+.book-types-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  max-width: 960px;
+  max-width: 1060px;
   margin: 0 auto;
 }
 
-.tier-card {
+/* Last row: 2 cards centered */
+.book-types-grid .type-card:nth-child(4) {
+  grid-column: 1 / 2;
+  margin-left: auto;
+}
+
+.type-card {
   background: var(--paper);
-  padding: 44px 36px;
+  padding: 40px 32px;
   border-radius: 4px;
   box-shadow: 0 2px 12px rgba(20, 24, 33, 0.04);
   display: flex;
   flex-direction: column;
 }
 
-.tier-name {
-  font-family: var(--font-body);
-  font-size: 11px;
+.type-name {
+  font-family: var(--font-display);
+  font-size: 22px;
   font-weight: 500;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--gilt);
-  margin-bottom: 20px;
+  color: var(--ink);
+  margin-bottom: 16px;
 }
 
-.tier-description {
-  font-size: 16px;
+.type-description {
+  font-size: 15px;
   line-height: 1.7;
   color: var(--ink-soft);
   flex-grow: 1;
-  margin-bottom: 32px;
-}
-
-.tier-varies {
-  font-family: var(--font-body);
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--ink-fade);
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 
 .tier-cta {
@@ -859,9 +856,13 @@ footer {
   }
   .craft-numeral { font-size: 44px; }
 
-  .investment-grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
+  .book-types-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .book-types-grid .type-card:nth-child(4) {
+    margin-left: 0;
   }
 
   .nav-links { display: none; }
@@ -940,7 +941,7 @@ footer {
     <div class="nav-links" id="navLinks">
       <a href="#library">Showcase</a>
       <a href="#about">About</a>
-      <a href="#investment">Investment</a>
+      <a href="#book-types">Book Types</a>
       <a href="mailto:david@bookyourbrand.com" class="nav-cta">Inquire</a>
     </div>
     <div class="nav-toggle" id="navToggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
@@ -1097,30 +1098,38 @@ footer {
   </div>
 </section>
 
-<!-- ====== INVESTMENT ====== -->
-<section class="investment" id="investment">
+<!-- ====== BOOK TYPES ====== -->
+<section class="book-types" id="book-types">
   <div class="container">
-    <div class="investment-header reveal">
-      <p class="section-label">I N V E S T M E N T</p>
+    <div class="book-types-header reveal">
+      <p class="section-label">B O O K &ensp; T Y P E S</p>
+      <h2 class="section-title">Every book begins with a story worth telling</h2>
     </div>
-    <p class="investment-note reveal">Every book is custom. Investment varies based on scope, word count, and timeline. These are three common starting points.</p>
-    <div class="investment-grid">
-      <div class="tier-card reveal">
-        <p class="tier-name">Branding Book</p>
-        <p class="tier-description">A focused book that establishes you as the authority in your field. Designed for professionals who want a published work that opens doors, earns speaking invitations, and gives their expertise a permanent home.</p>
-        <p class="tier-varies">Investment varies</p>
+    <p class="book-types-note reveal">Whether you are reflecting on a life well-lived, distilling years of hard-won wisdom, or giving shape to an idea that keeps you up at night, the first question is always the same: what kind of book wants to be written?</p>
+    <div class="book-types-grid">
+      <div class="type-card reveal">
+        <p class="type-name">Memoir</p>
+        <p class="type-description">Your life has chapters that other people need to read. A memoir captures the experiences, turning points, and quiet revelations that shaped who you are, written so that readers see their own journey reflected in yours.</p>
         <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
       </div>
-      <div class="tier-card reveal">
-        <p class="tier-name">Standard</p>
-        <p class="tier-description">A complete book written together over several months. Includes the full author interview, sample manuscript, working manuscript phase, voice refinement, and a polished final draft ready for publication.</p>
-        <p class="tier-varies">Investment varies</p>
+      <div class="type-card reveal">
+        <p class="type-name">Self-Help</p>
+        <p class="type-description">You have solved a problem that others are still struggling with. A self-help book positions your insight, your method, and your lived experience as a guide for readers searching for answers they have not been able to find on their own.</p>
         <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
       </div>
-      <div class="tier-card reveal">
-        <p class="tier-name">Full Ghost Writing</p>
-        <p class="tier-description">The complete experience. White-glove service from first conversation through final manuscript, with dedicated weekly sessions, multiple rounds of editing, and my personal attention at every stage of the process.</p>
-        <p class="tier-varies">Investment varies</p>
+      <div class="type-card reveal">
+        <p class="type-name">Autobiography</p>
+        <p class="type-description">The full arc of a life, told in your voice. An autobiography is a comprehensive account of where you have been, what you have built, and what you have learned along the way. It is the book people will reach for when they want to understand how you became who you are.</p>
+        <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
+      </div>
+      <div class="type-card reveal">
+        <p class="type-name">Novel</p>
+        <p class="type-description">Some truths are best told through fiction. A novel lets you explore ideas, emotions, and human experiences through characters and narrative, giving your message a form that readers carry with them long after the last page.</p>
+        <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
+      </div>
+      <div class="type-card reveal">
+        <p class="type-name">Journal / Workbook</p>
+        <p class="type-description">A book that works alongside the reader. Journals and workbooks combine your expertise with structured exercises, prompts, and reflection spaces, giving readers a tool they return to again and again as they apply your ideas to their own life.</p>
         <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
       </div>
     </div>
