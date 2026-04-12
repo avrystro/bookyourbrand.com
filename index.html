@@ -3,35 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book Your Brand | Ghost Writing & Author Coaching by David Strauss</title>
-<meta name="description" content="Turn your story into a bestselling book. David Lloyd Strauss offers premium ghost writing, author coaching, and publishing services. 40+ years of literary experience. International bestseller clients.">
-<meta property="og:title" content="Book Your Brand | Ghost Writing & Author Coaching">
-<meta property="og:description" content="Turn your story into a bestselling book. Premium ghost writing and author coaching by David Lloyd Strauss.">
+<title>Book Your Brand | David Lloyd Strauss, Professional Wordsmith</title>
+<meta name="description" content="Voice. Word. Story. David Lloyd Strauss is a professional wordsmith with 30+ years of published work. Ghost writing, author coaching, and editorial services for authors, executives, and public figures.">
+<meta property="og:title" content="Book Your Brand | David Lloyd Strauss">
+<meta property="og:description" content="I take a person's story and make it the reader's story. Premium ghost writing by David Lloyd Strauss.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bookyourbrand.com">
 <link rel="canonical" href="https://bookyourbrand.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 /* ========================================
-   VARIABLES
+   THE ATELIER — Design System
+   A literary object, not a website.
    ======================================== */
 :root {
-  --gold: #c9a55c;
-  --gold-light: #dcc088;
-  --gold-dark: #a8863d;
-  --navy: #1e2a3a;
-  --charcoal: #141821;
-  --deep-black: #0c0f16;
-  --cream: #f5f0e8;
-  --cream-dark: #e8e0d2;
-  --warm-gray: #9a9590;
-  --text-light: #d4d0cc;
-  --text-muted: #8a8580;
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', -apple-system, sans-serif;
-  --nav-height: 72px;
-  --max-width: 1140px;
+  --paper:       #f5f0e8;
+  --paper-warm:  #ede5d4;
+  --ink:         #141821;
+  --ink-soft:    #2a2e38;
+  --ink-fade:    #6a655e;
+  --gilt:        #c9a55c;
+  --gilt-deep:   #9d7d3a;
+  --gilt-pale:   #e8d4a8;
+  --rule:        rgba(20, 24, 33, 0.12);
+
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body:    'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --nav-height:   72px;
+  --max-width:    1140px;
 }
 
 /* ========================================
@@ -51,14 +51,16 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--deep-black);
-  color: var(--text-light);
+  background: var(--paper);
+  color: var(--ink-soft);
+  /* subtle paper texture */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   line-height: 1.15;
-  color: #fff;
+  color: var(--ink);
 }
 
 a { text-decoration: none; color: inherit; transition: color 0.25s, opacity 0.25s; }
@@ -71,31 +73,54 @@ ul { list-style: none; }
   padding: 0 24px;
 }
 
-/* Section spacing */
-section { padding: 100px 0; }
+/* ========================================
+   SECTION PRIMITIVES
+   ======================================== */
+section { padding: 120px 0; }
 
 .section-label {
   font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 16px;
+  color: var(--gilt);
+  margin-bottom: 12px;
 }
 
 .section-title {
-  font-size: clamp(32px, 4.5vw, 52px);
-  font-weight: 700;
-  margin-bottom: 20px;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink);
+  margin-bottom: 24px;
 }
 
-.section-subtitle {
-  font-size: 18px;
-  color: var(--text-muted);
-  max-width: 620px;
+.section-intro {
+  font-family: var(--font-body);
+  font-size: 17px;
+  color: var(--ink-fade);
+  max-width: 560px;
   line-height: 1.7;
+}
+
+/* Hairline gold rule divider */
+.divider {
+  width: 60px;
+  height: 1px;
+  background: var(--gilt);
+  margin: 0 auto;
+}
+
+/* Asterism section break */
+.asterism {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--gilt);
+  letter-spacing: 8px;
+  padding: 40px 0;
 }
 
 /* ========================================
@@ -106,43 +131,36 @@ section { padding: 100px 0; }
   align-items: center;
   gap: 8px;
   font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.8px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 16px 32px;
-  border-radius: 4px;
+  padding: 16px 36px;
+  border-radius: 2px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .btn-primary {
-  background: var(--gold);
-  color: var(--deep-black);
+  background: var(--gilt);
+  color: var(--ink);
 }
 .btn-primary:hover {
-  background: var(--gold-light);
+  background: var(--gilt-deep);
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(201, 165, 92, 0.25);
-}
-
-.btn-outline {
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.2);
-}
-.btn-outline:hover {
-  border-color: var(--gold);
-  color: var(--gold);
+  box-shadow: 0 6px 20px rgba(201, 165, 92, 0.2);
 }
 
 .btn-ghost {
   background: transparent;
-  color: var(--gold);
+  color: var(--gilt);
   padding: 16px 0;
+  border-bottom: 1px solid transparent;
 }
-.btn-ghost:hover { opacity: 0.8; }
+.btn-ghost:hover {
+  border-bottom-color: var(--gilt);
+}
 .btn-ghost svg { transition: transform 0.25s; }
 .btn-ghost:hover svg { transform: translateX(4px); }
 
@@ -156,10 +174,17 @@ nav {
   height: var(--nav-height);
   display: flex;
   align-items: center;
-  background: rgba(12, 15, 22, 0.94);
+  background: rgba(245, 240, 232, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: background 0.25s, backdrop-filter 0.25s, box-shadow 0.25s;
+}
+
+nav.scrolled {
+  background: rgba(245, 240, 232, 0.96);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 1px 0 var(--rule);
 }
 
 nav .container {
@@ -170,51 +195,40 @@ nav .container {
 }
 
 .nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.nav-brand-text {
-  font-family: var(--font-heading);
-  font-size: 22px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.01em;
-}
-
-.nav-brand-text span {
-  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.5px;
 }
 
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: 36px;
   align-items: center;
 }
 
 .nav-links a {
-  font-size: 14px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.6);
-  letter-spacing: 0.3px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-fade);
   transition: color 0.25s;
 }
-.nav-links a:hover { color: #fff; }
+.nav-links a:hover { color: var(--ink); }
 
 .nav-cta {
-  background: var(--gold);
-  color: var(--deep-black) !important;
+  background: var(--gilt);
+  color: var(--ink) !important;
   padding: 10px 24px;
-  border-radius: 4px;
-  font-weight: 600 !important;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  font-size: 12px !important;
+  border-radius: 2px;
+  font-weight: 500 !important;
 }
 .nav-cta:hover {
-  background: var(--gold-light);
-  color: var(--deep-black) !important;
+  background: var(--gilt-deep);
+  color: var(--ink) !important;
 }
 
 .nav-toggle {
@@ -225,9 +239,9 @@ nav .container {
   padding: 8px;
 }
 .nav-toggle span {
-  width: 24px;
-  height: 2px;
-  background: #fff;
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink);
   transition: all 0.3s;
 }
 
@@ -238,1131 +252,621 @@ nav .container {
   min-height: calc(100vh - var(--nav-height));
   display: flex;
   align-items: center;
-  background: var(--deep-black);
+  padding: 80px 0 120px;
   position: relative;
   overflow: hidden;
-  padding: 80px 0;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -40%;
-  right: -20%;
-  width: 70%;
-  height: 120%;
-  background: radial-gradient(ellipse, rgba(201, 165, 92, 0.06) 0%, transparent 70%);
-  pointer-events: none;
 }
 
 .hero .container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 380px;
   gap: 80px;
   align-items: center;
 }
 
-.hero-content { position: relative; z-index: 1; }
+.hero-content { max-width: 600px; }
 
-.hero-eyebrow {
+.hero-tagline {
   font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gilt);
+  margin-bottom: 28px;
+  opacity: 0; transform: translateY(12px);
+  animation: fadeUp 0.3s ease-out 0ms forwards;
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 6vw, 72px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.05;
+  margin-bottom: 16px;
+  opacity: 0; transform: translateY(12px);
+  animation: fadeUp 0.5s ease-out 120ms forwards;
+}
+
+.hero-author {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 24px;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+  opacity: 0; transform: translateY(12px);
+  animation: fadeUp 0.4s ease-out 240ms forwards;
+}
+
+.hero-subtitle {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-fade);
+  margin-bottom: 32px;
+  opacity: 0; transform: translateY(12px);
+  animation: fadeUp 0.4s ease-out 320ms forwards;
+}
+
+.hero-text {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  max-width: 520px;
+  margin-bottom: 40px;
+  opacity: 0; transform: translateY(12px);
+  animation: fadeUp 0.5s ease-out 440ms forwards;
+}
+
+.hero-rule {
+  width: 80px;
+  height: 1px;
+  background: var(--gilt);
+  margin-bottom: 36px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: scaleIn 0.6s ease-out 620ms forwards;
+}
+
+.hero-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 32px;
+  opacity: 0; transform: translateY(12px);
+  animation: fadeUp 0.4s ease-out 800ms forwards;
 }
 
-.hero-eyebrow::before {
-  content: '';
-  width: 40px;
-  height: 1px;
-  background: var(--gold);
+.hero-image {
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 0.9s ease-out 200ms forwards;
 }
 
-.hero h1 {
-  font-size: clamp(38px, 5vw, 60px);
-  font-weight: 700;
-  line-height: 1.08;
-  margin-bottom: 28px;
-  letter-spacing: -0.03em;
+.hero-image img {
+  max-height: 520px;
+  width: auto;
+  filter: drop-shadow(0 20px 40px rgba(20, 24, 33, 0.1));
 }
 
-.hero h1 em {
-  font-style: italic;
-  color: var(--gold);
+/* ========================================
+   CREDIBILITY STRIP
+   ======================================== */
+.credibility {
+  padding: 48px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
 }
 
-.hero-description {
-  font-size: 18px;
-  color: var(--text-muted);
-  line-height: 1.75;
-  margin-bottom: 40px;
-  max-width: 480px;
-}
-
-.hero-buttons {
+.credibility .container {
   display: flex;
-  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
   flex-wrap: wrap;
 }
 
-.hero-trust {
-  margin-top: 48px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.hero-trust-avatars {
-  display: flex;
-}
-
-.hero-trust-avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--navy);
-  border: 2px solid var(--deep-black);
-  margin-left: -10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  color: var(--gold);
-  font-weight: 600;
-}
-.hero-trust-avatar:first-child { margin-left: 0; }
-
-.hero-trust-text {
-  font-size: 14px;
-  color: var(--text-muted);
-}
-.hero-trust-text strong {
-  color: #fff;
-  font-weight: 600;
-}
-
-.hero-visual {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-book-display {
-  position: relative;
-  width: 320px;
-  height: 440px;
-}
-
-.hero-book {
-  width: 280px;
-  height: 400px;
-  background: linear-gradient(145deg, var(--navy), #253348);
-  border-radius: 4px 12px 12px 4px;
-  box-shadow:
-    -6px 0 0 rgba(30, 42, 58, 0.8),
-    -11px 0 0 rgba(30, 42, 58, 0.5),
-    0 20px 60px rgba(0,0,0,0.5);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 32px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-book::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
-}
-
-.hero-book-label {
+.credibility-item {
   font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 24px;
-}
-
-.hero-book-title {
-  font-family: var(--font-heading);
-  font-size: 28px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.2;
-  margin-bottom: 16px;
-}
-
-.hero-book-author {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--gold-light);
-  margin-bottom: 32px;
+  color: var(--ink-fade);
 }
 
-.hero-book-tagline {
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-style: italic;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.5;
-}
-
-.hero-book-spine {
-  position: absolute;
-  left: -6px;
-  top: 0;
-  bottom: 0;
-  width: 6px;
-  background: linear-gradient(180deg, var(--gold-dark), var(--gold), var(--gold-dark));
-  border-radius: 2px 0 0 2px;
-}
-
-/* ========================================
-   ABOUT / FOUNDER
-   ======================================== */
-.about {
-  background: var(--charcoal);
-  position: relative;
-}
-
-.about .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.about-image-wrapper {
-  position: relative;
-}
-
-.about-image-frame {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  background: linear-gradient(145deg, var(--navy), #1a2636);
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about-image-placeholder {
-  text-align: center;
-  padding: 40px;
-}
-
-.about-image-placeholder-icon {
-  width: 80px;
-  height: 80px;
+.credibility-dot {
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
-  background: rgba(201, 165, 92, 0.1);
-  border: 2px solid rgba(201, 165, 92, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  font-size: 32px;
-  color: var(--gold);
-}
-
-.about-image-placeholder-text {
-  font-size: 13px;
-  color: var(--text-muted);
-  letter-spacing: 1px;
-}
-
-.about-image-frame::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--gold), transparent);
-}
-
-.about-accent {
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  width: 120px;
-  height: 120px;
-  border: 1px solid rgba(201, 165, 92, 0.15);
-  border-radius: 8px;
-  z-index: -1;
-}
-
-.about-content h2 {
-  font-size: clamp(32px, 4vw, 48px);
-  margin-bottom: 8px;
-}
-
-.about-name-subtitle {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 32px;
-}
-
-.about-content p {
-  color: var(--text-muted);
-  margin-bottom: 20px;
-  line-height: 1.8;
-}
-
-.about-content p:last-of-type {
-  margin-bottom: 32px;
-}
-
-.about-highlight {
-  background: rgba(201, 165, 92, 0.08);
-  border-left: 3px solid var(--gold);
-  padding: 20px 24px;
-  margin: 32px 0;
-  border-radius: 0 6px 6px 0;
-}
-
-.about-highlight p {
-  font-family: var(--font-heading);
-  font-size: 20px;
-  font-style: italic;
-  color: var(--cream) !important;
-  line-height: 1.6;
-  margin-bottom: 0 !important;
+  background: var(--gilt);
 }
 
 /* ========================================
-   STATS
+   THE LIBRARY (Book Grid)
    ======================================== */
-.stats {
-  background: var(--deep-black);
-  padding: 80px 0;
-  border-top: 1px solid rgba(255,255,255,0.04);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-}
+.library { padding: 120px 0 100px; }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  text-align: center;
-}
-
-.stat-item {
-  padding: 20px;
-}
-
-.stat-number {
-  font-family: var(--font-heading);
-  font-size: clamp(36px, 4vw, 52px);
-  font-weight: 700;
-  color: var(--gold);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.stat-label {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-.stat-description {
-  font-size: 14px;
-  color: var(--warm-gray);
-  line-height: 1.6;
-}
-
-/* ========================================
-   PROCESS / JOURNEY
-   ======================================== */
-.process {
-  background: var(--charcoal);
-}
-
-.process-header {
+.library-header {
   text-align: center;
   margin-bottom: 72px;
 }
 
-.process-header .section-subtitle {
-  margin: 0 auto;
-}
-
-.process-grid {
+.library-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 32px;
 }
 
-.process-step {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 8px;
-  padding: 40px 32px;
-  position: relative;
-  transition: border-color 0.3s, transform 0.3s;
+/* Feature certain books larger */
+.library-grid .book-card.featured {
+  grid-column: span 1;
 }
-.process-step:hover {
-  border-color: rgba(201, 165, 92, 0.2);
+
+.book-card {
+  text-align: center;
+  transition: transform 0.25s ease;
+}
+
+.book-card:hover {
   transform: translateY(-4px);
 }
 
-.process-step-number {
-  font-family: var(--font-heading);
-  font-size: 48px;
-  font-weight: 800;
-  color: rgba(201, 165, 92, 0.12);
-  position: absolute;
-  top: 20px;
-  right: 24px;
-  line-height: 1;
+.book-card a {
+  display: block;
 }
 
-.process-step h3 {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 12px;
+.book-cover {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 4px 16px rgba(20, 24, 33, 0.08), 0 1px 4px rgba(20, 24, 33, 0.04);
+  transition: box-shadow 0.25s ease;
 }
 
-.process-step p {
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.7;
+.book-card:hover .book-cover {
+  box-shadow: 0 8px 32px rgba(20, 24, 33, 0.12), 0 2px 8px rgba(20, 24, 33, 0.06);
 }
 
-/* ========================================
-   SERVICES
-   ======================================== */
-.services {
-  background: var(--deep-black);
+.book-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--ink);
+  margin-top: 16px;
+  line-height: 1.3;
+  transition: color 0.2s;
 }
 
-.services-header {
-  text-align: center;
-  margin-bottom: 64px;
+.book-card:hover .book-title {
+  color: var(--gilt-deep);
 }
 
-.services-header .section-subtitle {
-  margin: 0 auto;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.service-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 8px;
-  padding: 40px 32px;
-  transition: border-color 0.3s, transform 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-.service-card:hover {
-  border-color: rgba(201, 165, 92, 0.25);
-  transform: translateY(-4px);
-}
-
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--gold), transparent);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.service-card:hover::before { opacity: 1; }
-
-.service-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
-  background: rgba(201, 165, 92, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-  font-size: 22px;
-  color: var(--gold);
-}
-
-.service-card h3 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.service-card p {
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 24px;
-}
-
-.service-card .btn-ghost {
-  font-size: 13px;
-  padding: 0;
+.book-author {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-fade);
+  margin-top: 6px;
 }
 
 /* ========================================
-   PRICING
+   ABOUT (Meet David)
    ======================================== */
-.pricing {
-  background: var(--charcoal);
+.about {
+  padding: 120px 0;
+  background: var(--paper-warm);
 }
 
-.pricing-header {
-  text-align: center;
-  margin-bottom: 64px;
-}
-
-.pricing-header .section-subtitle {
-  margin: 0 auto;
-}
-
-.pricing-grid {
+.about .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: 360px 1fr;
+  gap: 80px;
   align-items: start;
 }
 
-.pricing-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 12px;
-  padding: 40px 32px;
-  transition: border-color 0.3s, transform 0.3s;
-  position: relative;
-}
-.pricing-card:hover {
-  border-color: rgba(201, 165, 92, 0.2);
-}
-
-.pricing-card.featured {
-  border-color: var(--gold);
-  background: rgba(201, 165, 92, 0.04);
-  transform: scale(1.02);
-}
-
-.pricing-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--gold);
-  color: var(--deep-black);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 6px 20px;
-  border-radius: 20px;
-}
-
-.pricing-tier {
-  font-family: var(--font-heading);
-  font-size: 24px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 8px;
-}
-
-.pricing-description {
-  font-size: 14px;
-  color: var(--text-muted);
-  margin-bottom: 24px;
-  line-height: 1.6;
-}
-
-.pricing-price {
-  margin-bottom: 32px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-
-.pricing-amount {
-  font-family: var(--font-heading);
-  font-size: 42px;
-  font-weight: 700;
-  color: #fff;
-}
-
-.pricing-period {
-  font-size: 14px;
-  color: var(--text-muted);
-  margin-left: 4px;
-}
-
-.pricing-note {
-  font-size: 13px;
-  color: var(--warm-gray);
-  margin-top: 8px;
-}
-
-.pricing-features {
-  margin-bottom: 32px;
-}
-
-.pricing-feature {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 8px 0;
-  font-size: 15px;
-  color: var(--text-light);
-}
-
-.pricing-check {
-  color: var(--gold);
-  font-size: 16px;
-  margin-top: 2px;
-  flex-shrink: 0;
-}
-
-.pricing-card .btn {
+.about-image img {
   width: 100%;
-  justify-content: center;
+  border-radius: 2px;
+  box-shadow: 0 8px 32px rgba(20, 24, 33, 0.08);
+}
+
+.about-content .section-label { margin-bottom: 8px; }
+.about-content .section-title { margin-bottom: 36px; }
+
+.about-prose {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+
+.about-prose p { margin-bottom: 24px; }
+
+/* Drop cap */
+.about-prose p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  font-size: 4em;
+  font-weight: 400;
+  font-style: italic;
+  float: left;
+  line-height: 0.8;
+  margin: 4px 12px 0 0;
+  color: var(--gilt);
+}
+
+.about-credentials {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-fade);
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
 }
 
 /* ========================================
-   PORTFOLIO
+   THE CRAFT (Method)
    ======================================== */
-.portfolio {
-  background: var(--deep-black);
-}
+.craft { padding: 120px 0; }
 
-.portfolio-header {
+.craft-header {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 80px;
 }
 
-.portfolio-header .section-subtitle {
+.craft-steps {
+  max-width: 760px;
   margin: 0 auto;
 }
 
-.portfolio-grid {
+.craft-step {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 80px 1fr;
   gap: 32px;
+  margin-bottom: 64px;
+  align-items: start;
 }
 
-.portfolio-item {
-  position: relative;
-  border-radius: 4px 8px 8px 4px;
-  overflow: hidden;
-  aspect-ratio: 2 / 3;
-  background: linear-gradient(145deg, var(--navy), #1a2636);
-  transition: transform 0.3s;
-  box-shadow:
-    -4px 0 0 rgba(30, 42, 58, 0.7),
-    -7px 0 0 rgba(30, 42, 58, 0.4),
-    0 12px 40px rgba(0,0,0,0.3);
-}
-.portfolio-item:hover {
-  transform: translateY(-8px) scale(1.02);
+.craft-step:last-child { margin-bottom: 0; }
+
+.craft-numeral {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--gilt);
+  line-height: 1;
+  text-align: right;
+  padding-top: 4px;
 }
 
-.portfolio-book-content {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 24px 20px;
+.craft-step-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.craft-step-text {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+
+/* ========================================
+   INVESTMENT
+   ======================================== */
+.investment {
+  padding: 120px 0;
+  background: var(--paper-warm);
+}
+
+.investment-header {
   text-align: center;
-}
-
-.portfolio-book-content::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gold);
-}
-
-.portfolio-book-label {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
   margin-bottom: 16px;
 }
 
-.portfolio-book-title {
-  font-family: var(--font-heading);
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.25;
-  margin-bottom: 12px;
-}
-
-.portfolio-book-author {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--gold-light);
-}
-
-.portfolio-note {
+.investment-note {
   text-align: center;
-  margin-top: 48px;
-  font-size: 15px;
-  color: var(--text-muted);
-}
-
-/* ========================================
-   TESTIMONIALS
-   ======================================== */
-.testimonials {
-  background: var(--charcoal);
-}
-
-.testimonials-header {
-  text-align: center;
-  margin-bottom: 64px;
-}
-
-.testimonials-header .section-subtitle {
-  margin: 0 auto;
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.testimonial-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 8px;
-  padding: 36px 32px;
-}
-
-.testimonial-stars {
-  display: flex;
-  gap: 4px;
-  margin-bottom: 20px;
-}
-
-.testimonial-star {
-  color: var(--gold);
   font-size: 16px;
-}
-
-.testimonial-text {
-  font-size: 16px;
-  color: var(--text-light);
-  line-height: 1.75;
-  margin-bottom: 24px;
-  font-style: italic;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.testimonial-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(201, 165, 92, 0.1);
-  border: 1px solid rgba(201, 165, 92, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--gold);
-}
-
-.testimonial-name {
-  font-weight: 600;
-  color: #fff;
-  font-size: 15px;
-}
-
-.testimonial-title {
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-/* ========================================
-   FAQ
-   ======================================== */
-.faq {
-  background: var(--deep-black);
-}
-
-.faq-header {
-  text-align: center;
-  margin-bottom: 64px;
-}
-
-.faq-header .section-subtitle {
-  margin: 0 auto;
-}
-
-.faq-list {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.faq-item {
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-
-.faq-question {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 0;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  font-family: var(--font-body);
-  font-size: 17px;
-  font-weight: 600;
-  color: #fff;
-  transition: color 0.25s;
-}
-.faq-question:hover { color: var(--gold); }
-
-.faq-icon {
-  font-size: 24px;
-  color: var(--gold);
-  transition: transform 0.3s;
-  flex-shrink: 0;
-  margin-left: 16px;
-}
-
-.faq-item.active .faq-icon {
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
-}
-
-.faq-item.active .faq-answer {
-  max-height: 300px;
-  padding-bottom: 24px;
-}
-
-.faq-answer p {
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.8;
-}
-
-/* ========================================
-   CTA SECTION
-   ======================================== */
-.cta-section {
-  background: var(--charcoal);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(201, 165, 92, 0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.cta-content {
-  position: relative;
-  z-index: 1;
-}
-
-.cta-section h2 {
-  font-size: clamp(32px, 4.5vw, 52px);
-  margin-bottom: 20px;
-}
-
-.cta-section h2 em {
-  color: var(--gold);
-  font-style: italic;
-}
-
-.cta-description {
-  font-size: 18px;
-  color: var(--text-muted);
-  max-width: 560px;
-  margin: 0 auto 40px;
+  color: var(--ink-fade);
+  max-width: 480px;
+  margin: 0 auto 64px;
   line-height: 1.7;
 }
 
-.cta-buttons {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
+.investment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-.cta-note {
-  font-size: 14px;
-  color: var(--warm-gray);
-  margin-top: 20px;
+.tier-card {
+  background: var(--paper);
+  padding: 44px 36px;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(20, 24, 33, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.tier-name {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gilt);
+  margin-bottom: 20px;
+}
+
+.tier-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  flex-grow: 1;
+  margin-bottom: 32px;
+}
+
+.tier-varies {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-fade);
+  margin-bottom: 20px;
+}
+
+.tier-cta {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gilt);
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+  align-self: flex-start;
+  transition: border-color 0.2s;
+}
+
+.tier-cta:hover {
+  border-bottom-color: var(--gilt);
+}
+
+/* ========================================
+   FINAL CTA
+   ======================================== */
+.final-cta {
+  padding: 120px 0;
+  text-align: center;
+}
+
+.final-cta-headline {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.final-cta-sub {
+  font-size: 17px;
+  color: var(--ink-fade);
+  margin-bottom: 44px;
 }
 
 /* ========================================
    FOOTER
    ======================================== */
 footer {
-  background: var(--deep-black);
-  border-top: 1px solid rgba(255,255,255,0.05);
-  padding: 72px 0 32px;
+  padding: 80px 0 60px;
+  text-align: center;
+  border-top: 1px solid var(--rule);
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 48px;
-}
-
-.footer-brand-text {
-  font-family: var(--font-heading);
-  font-size: 24px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 16px;
-}
-
-.footer-brand-text span { color: var(--gold); }
-
-.footer-brand-description {
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 24px;
-  max-width: 320px;
-}
-
-.footer-social {
-  display: flex;
-  gap: 12px;
-}
-
-.footer-social a {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-size: 14px;
-  transition: all 0.25s;
-}
-.footer-social a:hover {
-  background: rgba(201, 165, 92, 0.1);
-  border-color: var(--gold);
-  color: var(--gold);
-}
-
-.footer-heading {
+.footer-tagline {
   font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  color: #fff;
-  margin-bottom: 20px;
+  color: var(--ink-fade);
+  margin-bottom: 4px;
 }
 
-.footer-links a {
-  display: block;
-  font-size: 15px;
-  color: var(--text-muted);
-  padding: 6px 0;
-  transition: color 0.25s;
+.footer-tagline-translation {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--ink-fade);
+  margin-bottom: 28px;
 }
-.footer-links a:hover { color: var(--gold); }
 
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.05);
-  padding-top: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.footer-email {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--gilt);
+  transition: color 0.2s;
+  margin-bottom: 40px;
+  display: inline-block;
 }
+.footer-email:hover { color: var(--gilt-deep); }
 
 .footer-copyright {
-  font-size: 14px;
-  color: var(--warm-gray);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-fade);
+  opacity: 0.6;
 }
 
-.footer-legal {
-  display: flex;
-  gap: 24px;
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.footer-legal a {
-  font-size: 14px;
-  color: var(--warm-gray);
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
-.footer-legal a:hover { color: var(--gold); }
+
+@keyframes scaleIn {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Scroll-triggered fade for sections */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ========================================
    RESPONSIVE
    ======================================== */
-@media (max-width: 1024px) {
+@media (max-width: 960px) {
+  section { padding: 80px 0; }
+
   .hero .container {
     grid-template-columns: 1fr;
     gap: 48px;
     text-align: center;
   }
-  .hero-content { order: 1; }
-  .hero-visual { order: 0; }
-  .hero-description { margin-left: auto; margin-right: auto; }
-  .hero-buttons { justify-content: center; }
-  .hero-trust { justify-content: center; }
-  .hero-eyebrow { justify-content: center; }
-  .hero-eyebrow::before { display: none; }
-  .hero-book-display { width: 260px; height: 360px; }
-  .hero-book { width: 230px; height: 330px; padding: 32px 24px; }
-  .hero-book-title { font-size: 24px; }
+  .hero-content { max-width: 100%; }
+  .hero-text { max-width: 100%; margin-left: auto; margin-right: auto; }
+  .hero-rule { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+  .hero-image { order: -1; }
+  .hero-image img { max-height: 360px; margin: 0 auto; }
 
-  .about .container { grid-template-columns: 1fr; gap: 48px; }
-  .about-image-wrapper { max-width: 400px; margin: 0 auto; }
+  .library-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 20px;
+  }
 
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .process-grid { grid-template-columns: 1fr 1fr; }
-  .services-grid { grid-template-columns: 1fr 1fr; }
-  .pricing-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
-  .pricing-card.featured { transform: none; }
-  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
-  .testimonials-grid { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-}
+  .about .container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .about-image { max-width: 320px; margin: 0 auto; }
 
-@media (max-width: 768px) {
-  section { padding: 72px 0; }
+  .craft-step {
+    grid-template-columns: 60px 1fr;
+    gap: 20px;
+  }
+  .craft-numeral { font-size: 44px; }
+
+  .investment-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
 
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
-  .nav-links.active {
+
+  .nav-links.open {
     display: flex;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     top: var(--nav-height);
     left: 0;
     right: 0;
-    bottom: 0;
-    background: rgba(12, 15, 22, 0.98);
-    padding: 40px 24px;
-    gap: 24px;
-    z-index: 999;
+    background: var(--paper);
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid var(--rule);
+    box-shadow: 0 8px 24px rgba(20, 24, 33, 0.06);
   }
-  .nav-links.active a {
-    font-size: 18px;
-    color: #fff;
-  }
-
-  .hero { min-height: auto; padding: 48px 0 64px; }
-  .hero h1 { font-size: 32px; }
-  .hero-description { font-size: 16px; }
-  .hero-book-display { width: 220px; height: 310px; }
-  .hero-book { width: 200px; height: 285px; padding: 24px 20px; }
-  .hero-book-title { font-size: 20px; }
-  .hero-book-label { font-size: 9px; }
-
-  .stats-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
-  .stat-number { font-size: 36px; }
-
-  .process-grid { grid-template-columns: 1fr; }
-  .services-grid { grid-template-columns: 1fr; }
-  .portfolio-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
 }
 
-@media (max-width: 480px) {
-  .hero-buttons { flex-direction: column; align-items: center; }
-  .hero-buttons .btn { width: 100%; justify-content: center; }
-  .cta-buttons { flex-direction: column; align-items: center; }
-  .cta-buttons .btn { width: 100%; justify-content: center; }
-  .portfolio-grid { grid-template-columns: 1fr; max-width: 260px; margin: 0 auto; }
+@media (max-width: 640px) {
+  .library-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 16px;
+  }
+
+  .credibility .container {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .credibility-dot { display: none; }
+
+  .hero-headline { font-size: 42px; }
+
+  .craft-step {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .craft-numeral {
+    text-align: left;
+    font-size: 36px;
+  }
+}
+
+/* ========================================
+   PLACEHOLDER BADGE (temporary content)
+   ======================================== */
+.placeholder {
+  position: relative;
+}
+.placeholder::after {
+  content: 'PLACEHOLDER';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gilt);
+  background: var(--paper);
+  border: 1px dashed var(--gilt);
+  padding: 4px 8px;
+  border-radius: 2px;
+  z-index: 10;
 }
 </style>
 </head>
 <body>
 
-<!-- ========================================
-     NAV
-     ======================================== -->
-<nav>
+<!-- ====== NAV ====== -->
+<nav id="nav">
   <div class="container">
-    <a href="#" class="nav-brand">
-      <span class="nav-brand-text">Book Your <span>Brand</span></span>
-    </a>
+    <a href="#" class="nav-brand">Book Your Brand</a>
     <div class="nav-links" id="navLinks">
-      <a href="#services">Services</a>
-      <a href="#process">Process</a>
-      <a href="portfolio.html">Portfolio</a>
+      <a href="#library">Showcase</a>
       <a href="#about">About</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact" class="nav-cta">Book a Call</a>
+      <a href="#investment">Investment</a>
+      <a href="mailto:david@bookyourbrand.com" class="nav-cta">Inquire</a>
     </div>
-    <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
+    <div class="nav-toggle" id="navToggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
       <span></span>
       <span></span>
       <span></span>
@@ -1370,614 +874,197 @@ footer {
   </div>
 </nav>
 
-<!-- ========================================
-     HERO
-     ======================================== -->
+<!-- ====== HERO ====== -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-eyebrow">Ghost Writing & Author Coaching</div>
-      <h1>Your Story Deserves to Be a <em>Bestseller</em></h1>
-      <p class="hero-description">You have a story the world needs to hear. I turn entrepreneurs, thought leaders, and visionaries into published authors with books that build their brand and change lives.</p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">Book a Free Consultation</a>
-        <a href="#process" class="btn btn-outline">See How It Works</a>
-      </div>
-      <div class="hero-trust">
-        <div class="hero-trust-avatars">
-          <div class="hero-trust-avatar">S</div>
-          <div class="hero-trust-avatar">M</div>
-          <div class="hero-trust-avatar">R</div>
-          <div class="hero-trust-avatar">K</div>
-        </div>
-        <div class="hero-trust-text"><strong>Dozens of authors</strong> coached to bestseller status</div>
+      <p class="hero-tagline">V O X &ensp; · &ensp; V E R B U M &ensp; · &ensp; F A B U L A</p>
+      <h1 class="hero-headline">Voice. Word. Story.</h1>
+      <p class="hero-author">D A V I D &ensp; L L O Y D &ensp; S T R A U S S</p>
+      <p class="hero-subtitle">Professional Wordsmith</p>
+      <p class="hero-text">I take a person's story and make it the reader's story. For more than thirty years, I have worked with authors, executives, and public figures to write books that position their experience as an answer to the problems their readers face. Every book begins with a conversation about what matters most to you and ends with a published work that carries your voice into the world.</p>
+      <div class="hero-rule"></div>
+      <div class="hero-actions">
+        <a href="mailto:david@bookyourbrand.com" class="btn btn-primary">Inquire</a>
+        <a href="#library" class="btn btn-ghost">
+          See the Library
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-book-display">
-        <div class="hero-book">
-          <div class="hero-book-spine"></div>
-          <div class="hero-book-label">Your Next Book</div>
-          <div class="hero-book-title">Your Story, Beautifully Told</div>
-          <div class="hero-book-author">by You</div>
-          <div class="hero-book-tagline">"Taking a person's story and making it the reader's story."</div>
-        </div>
-      </div>
+    <div class="hero-image">
+      <img src="assets/images/david-strauss-headshot.png" alt="David Lloyd Strauss" width="380" height="520">
     </div>
   </div>
 </section>
 
-<!-- ========================================
-     STATS
-     ======================================== -->
-<section class="stats">
+<!-- ====== CREDIBILITY STRIP ====== -->
+<section class="credibility">
   <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-number">40+</div>
-        <div class="stat-label">Years Experience</div>
-        <div class="stat-description">Four decades of literary craft and storytelling</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">12+</div>
-        <div class="stat-label">Books Written</div>
-        <div class="stat-description">Including international bestsellers</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">6-8</div>
-        <div class="stat-label">Active Projects</div>
-        <div class="stat-description">Working simultaneously with select authors</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">100%</div>
-        <div class="stat-label">Your Voice</div>
-        <div class="stat-description">Every book sounds like you, not a ghost writer</div>
-      </div>
+    <span class="credibility-item">Sharon Lecter</span>
+    <span class="credibility-dot"></span>
+    <span class="credibility-item">Napoleon Hill Foundation</span>
+    <span class="credibility-dot"></span>
+    <span class="credibility-item">International Bestseller</span>
+    <span class="credibility-dot"></span>
+    <span class="credibility-item">30+ Years of Published Work</span>
+  </div>
+</section>
+
+<!-- ====== THE LIBRARY ====== -->
+<section class="library" id="library">
+  <div class="container">
+    <div class="library-header reveal">
+      <p class="section-label">S E L E C T E D &ensp; W O R K</p>
+      <h2 class="section-title">The Library</h2>
+      <p class="section-intro" style="margin: 0 auto;">Books I have helped bring into the world.</p>
+    </div>
+    <div class="library-grid">
+      <div class="book-card reveal"><a href="books/old-new-true.html"><img class="book-cover" src="assets/images/old-new-true.jpg" alt="Old Wealth, New Wealth, True Wealth" loading="lazy"><p class="book-title">Old Wealth, New Wealth, True Wealth</p><p class="book-author">Sharon Lecter &amp; Nathan Gryp</p></a></div>
+      <div class="book-card reveal"><a href="books/from-drifting-to-winning.html"><img class="book-cover" src="assets/images/from-drifting-to-winning.webp" alt="From Drifting to Winning" loading="lazy"><p class="book-title">From Drifting to Winning</p><p class="book-author">Avry Stroeve</p></a></div>
+      <div class="book-card reveal"><a href="books/one-big-life.html"><img class="book-cover" src="assets/images/one-big-life.jpg" alt="One Big Life" loading="lazy"><p class="book-title">One Big Life</p><p class="book-author">Elaine</p></a></div>
+      <div class="book-card reveal"><a href="books/dancing-with-energy-vampires.html"><img class="book-cover" src="assets/images/dancing-with-energy-vampires.jpg" alt="Dancing with Energy Vampires" loading="lazy"><p class="book-title">Dancing with Energy Vampires</p><p class="book-author">David Lloyd Strauss</p></a></div>
+      <div class="book-card reveal"><a href="books/footsteps-after-the-fall.html"><img class="book-cover" src="assets/images/footsteps-after-the-fall.webp" alt="Footsteps After the Fall" loading="lazy"><p class="book-title">Footsteps After the Fall</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal"><a href="books/sabotage-to-success.html"><img class="book-cover" src="assets/images/sabotage-to-success.webp" alt="Sabotage to Success" loading="lazy"><p class="book-title">Sabotage to Success</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal"><a href="books/second-mouse-gets-the-cheese.html"><img class="book-cover" src="assets/images/second-mouse-gets-the-cheese.webp" alt="The Second Mouse Gets the Cheese" loading="lazy"><p class="book-title">The Second Mouse Gets the Cheese</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal"><a href="books/unchained-wealth.html"><img class="book-cover" src="assets/images/unchained-wealth.webp" alt="Unchained Wealth" loading="lazy"><p class="book-title">Unchained Wealth</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal"><a href="books/embrace-special-needs.html"><img class="book-cover" src="assets/images/embrace-special-needs.jpg" alt="Embrace Special Needs" loading="lazy"><p class="book-title">Embrace Special Needs</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal"><a href="books/what-if-today-were-the-day.html"><img class="book-cover" src="assets/images/what-if-today.webp" alt="What If Today Were the Day" loading="lazy"><p class="book-title">What If Today Were the Day</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal"><a href="books/in-search-of-a-way-out.html"><img class="book-cover" src="assets/images/in-search-of-a-way-out.webp" alt="In Search of a Way Out" loading="lazy"><p class="book-title">In Search of a Way Out</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal"><a href="books/stroke-of-love.html"><img class="book-cover" src="assets/images/stroke-of-love.jpg" alt="Stroke of Love" loading="lazy"><p class="book-title">Stroke of Love</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal"><a href="books/who-are-you-fooling.html"><img class="book-cover" src="assets/images/who-are-you-fooling.webp" alt="Who Are You Fooling?" loading="lazy"><p class="book-title">Who Are You Fooling?</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal"><a href="books/valentines-detox.html"><img class="book-cover" src="assets/images/valentines-detox.webp" alt="Valentine's Detox" loading="lazy"><p class="book-title">Valentine's Detox</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal"><a href="books/7-ideas-that-changed-the-world.html"><img class="book-cover" src="assets/images/7-ideas-that-changed-the-world.webp" alt="7 Ideas That Changed the World" loading="lazy"><p class="book-title">7 Ideas That Changed the World</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal"><a href="books/damon.html"><img class="book-cover" src="assets/images/damon.png" alt="Damon" loading="lazy"><p class="book-title">Damon</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal"><a href="books/tgw.html"><img class="book-cover" src="assets/images/tgw.jpg" alt="TGW" loading="lazy"><p class="book-title">TGW</p><p class="book-author">&nbsp;</p></a></div>
     </div>
   </div>
 </section>
 
-<!-- ========================================
-     ABOUT
-     ======================================== -->
+<!-- ====== ABOUT ====== -->
 <section class="about" id="about">
   <div class="container">
-    <div class="about-image-wrapper">
-      <div class="about-image-frame">
-        <div class="about-image-placeholder">
-          <div class="about-image-placeholder-icon">D</div>
-          <div class="about-image-placeholder-text">Photo coming soon</div>
-        </div>
-      </div>
-      <div class="about-accent"></div>
+    <div class="about-image reveal">
+      <img src="assets/images/david-strauss-headshot.png" alt="David Lloyd Strauss">
     </div>
     <div class="about-content">
-      <div class="section-label">Meet Your Author Coach</div>
-      <h2>David Lloyd Strauss</h2>
-      <div class="about-name-subtitle">Internationally Acclaimed Writer & Author Coach</div>
-      <p>David is an internationally celebrated bestselling writer, editor, and author coach with over 40 years of literary experience. He offers personalized coaching and writing services for aspiring authors who want to be the authentic voice of their book while benefiting from his decades of craft.</p>
-      <p>As a prolific writer with over a dozen books of his own, David provides expert guidance through every stage: concept development, structured outlining, manuscript coaching, developmental and line editing, proofreading, and step-by-step guidance through self-publishing.</p>
-      <div class="about-highlight">
-        <p>"My superpower is taking a person's story and making it the reader's story. Your book should change the person who reads it."</p>
+      <p class="section-label reveal">T H E &ensp; W O R D S M I T H</p>
+      <h2 class="section-title reveal">Meet David</h2>
+      <div class="about-prose reveal">
+        <p>Books saved my life. I was hit in the head by a rock as a young boy. I was a runaway. I grew up in circumstances that most people would consider disqualifying. But I found my way to words, and words gave me something that nothing else could: a way to make sense of what had happened and a reason to keep going.</p>
+        <p>That is why I do this work. I believe that when people are struggling in life and trying to figure things out, they will go to a book first, before they go to an actual person. They read books to help them make sense of life, to find answers, to feel less alone in whatever they are facing. Some of them will eventually seek out a mentor, a guide, a spiritual advisor, a trusted friend. But the book comes first.</p>
+        <p>In my world, I help people write books for the readers who are searching for those answers. We position your book as the answer to their problem. Your story becomes their mirror. Your experience becomes the thing that gives them permission to move forward.</p>
+        <p>I have spent more than thirty years refining this craft. My clients have included bestselling authors, high-net-worth professionals, and people whose stories simply deserved to exist between covers. I have a very specialized writing and editing skill, and there are very few people like me.</p>
+        <p>If you have a book inside you, I would like to hear about it.</p>
       </div>
-      <p>With his unique "Done With You" method, David has helped dozens of authors worldwide bring their stories to life through his one-on-one, conversational coaching style. He serves as an experienced guide, editor, co-writer, and sounding board, helping you shape your ideas into a manuscript worthy of publication.</p>
-      <a href="#contact" class="btn btn-ghost">
-        Work with David
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+      <p class="about-credentials reveal">David Lloyd Strauss &ensp;·&ensp; Boulder, Colorado &ensp;·&ensp; 30+ Years</p>
     </div>
   </div>
 </section>
 
-<!-- ========================================
-     PROCESS
-     ======================================== -->
-<section class="process" id="process">
+<!-- ====== THE CRAFT ====== -->
+<section class="craft" id="craft">
   <div class="container">
-    <div class="process-header">
-      <div class="section-label">The Journey</div>
-      <h2 class="section-title">From Idea to Published Bestseller</h2>
-      <p class="section-subtitle">A proven process refined over 40 years and dozens of published authors. Every step designed to keep your authentic voice front and center.</p>
+    <div class="craft-header reveal">
+      <p class="section-label">T H E &ensp; C R A F T</p>
+      <h2 class="section-title">How a book comes to life</h2>
     </div>
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="process-step-number">01</div>
-        <h3>Discovery Call</h3>
-        <p>We start with a conversation. What's your story? Who needs to hear it? What does success look like for your book? This call determines if we're the right fit.</p>
+    <div class="craft-steps">
+      <div class="craft-step reveal">
+        <div class="craft-numeral">I</div>
+        <div>
+          <h3 class="craft-step-title">The Author Interview</h3>
+          <p class="craft-step-text">Our journey begins with a comprehensive author interview: eighteen carefully developed questions that I have refined over decades of working with authors. This is a deep creative exploration designed to surface your natural voice, clarify the heart of your message, and help you think like your reader from the very start. By the time you finish, you will have greater clarity about your book than you have ever had before.</p>
+        </div>
       </div>
-      <div class="process-step">
-        <div class="process-step-number">02</div>
-        <h3>Story Architecture</h3>
-        <p>Together we map out your book's structure, key themes, and narrative arc. This blueprint becomes the foundation everything builds on.</p>
+      <div class="craft-step reveal">
+        <div class="craft-numeral">II</div>
+        <div>
+          <h3 class="craft-step-title">The Sample Manuscript</h3>
+          <p class="craft-step-text">Based on your interview responses, I write a sample introduction and a complete working outline for your book, at no charge. This is your idea coming to life on the page for the very first time. You will see your story, your message, and your reader all reflected back to you in a way that is compelling, purposeful, and unmistakably yours.</p>
+        </div>
       </div>
-      <div class="process-step">
-        <div class="process-step-number">03</div>
-        <h3>Conversational Writing</h3>
-        <p>Through recorded conversations, I extract your stories, insights, and voice. You talk, I listen and write. Every chapter sounds like you because it comes from you.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-step-number">04</div>
-        <h3>Craft & Polish</h3>
-        <p>I shape the raw material into compelling prose. Developmental editing, line editing, and multiple revision rounds until every sentence earns its place.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-step-number">05</div>
-        <h3>Your Approval</h3>
-        <p>You review every chapter. Nothing goes to print without your full sign-off. This is your book, your name, your legacy. I make sure it represents you perfectly.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-step-number">06</div>
-        <h3>Publication & Beyond</h3>
-        <p>Cover design, formatting, ISBN, Amazon listing, bestseller launch strategy. I guide you through every step from manuscript to published author.</p>
+      <div class="craft-step reveal">
+        <div class="craft-numeral">III</div>
+        <div>
+          <h3 class="craft-step-title">The Book</h3>
+          <p class="craft-step-text">We write together. Starting with the stories and ideas you feel most comfortable sharing, we build a full working manuscript within sixty days. Then we go chapter by chapter to refine your voice and sharpen your message, until every section serves your reader and the writing sounds like the best version of you. We play tennis with the manuscript, back and forth, until the book is done.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========================================
-     SERVICES
-     ======================================== -->
-<section class="services" id="services">
+<!-- ====== INVESTMENT ====== -->
+<section class="investment" id="investment">
   <div class="container">
-    <div class="services-header">
-      <div class="section-label">What We Offer</div>
-      <h2 class="section-title">Services</h2>
-      <p class="section-subtitle">Whether you need a complete ghost writing partnership or targeted support at a specific stage, there's a path for you.</p>
+    <div class="investment-header reveal">
+      <p class="section-label">I N V E S T M E N T</p>
     </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">&#9997;</div>
-        <h3>Ghost Writing</h3>
-        <p>Full-service book creation from concept to completed manuscript. You share your story through conversations; I transform it into a publication-ready book that sounds authentically like you.</p>
-        <a href="#contact" class="btn-ghost">
-          Learn more
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+    <p class="investment-note reveal">Every book is custom. Investment varies based on scope, word count, and timeline. These are three common starting points.</p>
+    <div class="investment-grid">
+      <div class="tier-card reveal">
+        <p class="tier-name">Branding Book</p>
+        <p class="tier-description">A focused book that establishes you as the authority in your field. Designed for professionals who want a published work that opens doors, earns speaking invitations, and gives their expertise a permanent home.</p>
+        <p class="tier-varies">Investment varies</p>
+        <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
       </div>
-      <div class="service-card">
-        <div class="service-icon">&#128214;</div>
-        <h3>Author Coaching</h3>
-        <p>One-on-one coaching through the entire writing process. I serve as your guide, editor, and sounding board, helping you develop your manuscript while keeping your unique voice intact.</p>
-        <a href="#contact" class="btn-ghost">
-          Learn more
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+      <div class="tier-card reveal">
+        <p class="tier-name">Standard</p>
+        <p class="tier-description">A complete book written together over several months. Includes the full author interview, sample manuscript, working manuscript phase, voice refinement, and a polished final draft ready for publication.</p>
+        <p class="tier-varies">Investment varies</p>
+        <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
       </div>
-      <div class="service-card">
-        <div class="service-icon">&#9998;</div>
-        <h3>Editing</h3>
-        <p>Developmental editing for structure and story arc, line editing for prose quality, and proofreading for polish. Multiple rounds until your manuscript shines.</p>
-        <a href="#contact" class="btn-ghost">
-          Learn more
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">&#127912;</div>
-        <h3>Cover Design</h3>
-        <p>Professional book cover design that captures your book's essence and stands out in a crowded market. Includes front cover, spine, and back cover for print editions.</p>
-        <a href="#contact" class="btn-ghost">
-          Learn more
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">&#128196;</div>
-        <h3>Formatting & Layout</h3>
-        <p>Interior formatting for both print and digital editions. Clean, professional typography and layout that makes your book a pleasure to read in any format.</p>
-        <a href="#contact" class="btn-ghost">
-          Learn more
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">&#128640;</div>
-        <h3>Publishing & Launch</h3>
-        <p>End-to-end publishing guidance: ISBN registration, Amazon KDP setup, distribution, and bestseller launch strategy to maximize your book's impact from day one.</p>
-        <a href="#contact" class="btn-ghost">
-          Learn more
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+      <div class="tier-card reveal">
+        <p class="tier-name">Full Ghost Writing</p>
+        <p class="tier-description">The complete experience. White-glove service from first conversation through final manuscript, with dedicated weekly sessions, multiple rounds of editing, and my personal attention at every stage of the process.</p>
+        <p class="tier-varies">Investment varies</p>
+        <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========================================
-     PRICING
-     ======================================== -->
-<section class="pricing" id="pricing">
+<!-- ====== FINAL CTA ====== -->
+<section class="final-cta">
   <div class="container">
-    <div class="pricing-header">
-      <div class="section-label">Investment</div>
-      <h2 class="section-title">Transparent Pricing</h2>
-      <p class="section-subtitle">Choose the level of partnership that fits your project. Every package includes David's personal attention and decades of expertise.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pricing-tier">Author Essentials</div>
-        <div class="pricing-description">For authors who have a manuscript and need expert editing, formatting, and publishing guidance.</div>
-        <div class="pricing-price">
-          <span class="pricing-amount">$4,500</span>
-          <span class="pricing-period">starting</span>
-          <div class="pricing-note">Payment plans available</div>
-        </div>
-        <div class="pricing-features">
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>Developmental editing & feedback</span>
-          </div>
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>Line editing & proofreading</span>
-          </div>
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>Interior formatting (print + digital)</span>
-          </div>
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>Publishing setup & guidance</span>
-          </div>
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>4 revision rounds</span>
-          </div>
-        </div>
-        <a href="#contact" class="btn btn-outline">Get Started</a>
-      </div>
-
-      <div class="pricing-card featured">
-        <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-tier">Done With You</div>
-        <div class="pricing-description">David's signature coaching method. You write with his expert guidance every step of the way.</div>
-        <div class="pricing-price">
-          <span class="pricing-amount">$12,000</span>
-          <span class="pricing-period">starting</span>
-          <div class="pricing-note">Payment plans available</div>
-        </div>
-        <div class="pricing-features">
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>Everything in Author Essentials</span>
-          </div>
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>1-on-1 weekly coaching sessions</span>
-          </div>
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>Story architecture & outlining</span>
-          </div>
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>Chapter-by-chapter feedback</span>
-          </div>
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>Cover design</span>
-          </div>
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>Bestseller launch strategy</span>
-          </div>
-        </div>
-        <a href="#contact" class="btn btn-primary">Get Started</a>
-      </div>
-
-      <div class="pricing-card">
-        <div class="pricing-tier">Full Ghost Writing</div>
-        <div class="pricing-description">The complete partnership. You share your story; David writes the book. Premium, white-glove service.</div>
-        <div class="pricing-price">
-          <span class="pricing-amount">$28,000</span>
-          <span class="pricing-period">starting</span>
-          <div class="pricing-note">Payment plans available</div>
-        </div>
-        <div class="pricing-features">
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>Everything in Done With You</span>
-          </div>
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>Full manuscript ghost writing</span>
-          </div>
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>Recorded conversation sessions</span>
-          </div>
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>Unlimited revision rounds</span>
-          </div>
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>Amazon advertising setup</span>
-          </div>
-          <div class="pricing-feature">
-            <span class="pricing-check">&#10003;</span>
-            <span>Priority scheduling & support</span>
-          </div>
-        </div>
-        <a href="#contact" class="btn btn-outline">Get Started</a>
-      </div>
-    </div>
+    <div class="asterism">&#x2042;</div>
+    <h2 class="final-cta-headline reveal">Your story deserves a great book.</h2>
+    <p class="final-cta-sub reveal">Let's talk about what yours could become.</p>
+    <a href="mailto:david@bookyourbrand.com" class="btn btn-primary reveal">Inquire</a>
   </div>
 </section>
 
-<!-- ========================================
-     PORTFOLIO
-     ======================================== -->
-<section class="portfolio" id="portfolio">
-  <div class="container">
-    <div class="portfolio-header">
-      <div class="section-label">Our Work</div>
-      <h2 class="section-title">Books We've Brought to Life</h2>
-      <p class="section-subtitle">A selection of published works created with Book Your Brand.</p>
-    </div>
-    <div class="portfolio-grid">
-      <a href="books/footsteps-after-the-fall.html" class="portfolio-item" style="background: none;">
-        <img src="assets/images/footsteps-after-the-fall.webp" alt="Footsteps After the Fall" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-      </a>
-      <a href="books/dancing-with-energy-vampires.html" class="portfolio-item" style="background: none;">
-        <img src="assets/images/dancing-with-energy-vampires.jpg" alt="Dancing with Energy Vampires" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-      </a>
-      <a href="books/sabotage-to-success.html" class="portfolio-item" style="background: none;">
-        <img src="assets/images/sabotage-to-success.webp" alt="Sabotage to Success" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-      </a>
-      <a href="books/one-big-life.html" class="portfolio-item" style="background: none;">
-        <img src="assets/images/one-big-life.jpg" alt="One Big Life" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-      </a>
-    </div>
-    <p class="portfolio-note" style="margin-top:48px;"><a href="portfolio.html" style="color:var(--gold);font-weight:600;">View all 17 published books &rarr;</a></p>
-  </div>
-</section>
-
-<!-- ========================================
-     TESTIMONIALS
-     ======================================== -->
-<section class="testimonials" id="testimonials">
-  <div class="container">
-    <div class="testimonials-header">
-      <div class="section-label">Client Stories</div>
-      <h2 class="section-title">What Our Authors Say</h2>
-      <p class="section-subtitle">From first-time writers to seasoned speakers, hear from authors who trusted David with their stories.</p>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="testimonial-stars">
-          <span class="testimonial-star">&#9733;</span>
-          <span class="testimonial-star">&#9733;</span>
-          <span class="testimonial-star">&#9733;</span>
-          <span class="testimonial-star">&#9733;</span>
-          <span class="testimonial-star">&#9733;</span>
-        </div>
-        <p class="testimonial-text">"David has a gift for pulling the story out of you that you didn't even know was there. My book became so much more than I imagined it could be."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">A</div>
-          <div>
-            <div class="testimonial-name">Published Author</div>
-            <div class="testimonial-title">International Bestseller</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">
-          <span class="testimonial-star">&#9733;</span>
-          <span class="testimonial-star">&#9733;</span>
-          <span class="testimonial-star">&#9733;</span>
-          <span class="testimonial-star">&#9733;</span>
-          <span class="testimonial-star">&#9733;</span>
-        </div>
-        <p class="testimonial-text">"The 'Done With You' approach was exactly what I needed. I didn't want someone to write my book for me. I wanted a guide who could help me write the best version of it myself."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">B</div>
-          <div>
-            <div class="testimonial-name">Published Author</div>
-            <div class="testimonial-title">Entrepreneur & Speaker</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">
-          <span class="testimonial-star">&#9733;</span>
-          <span class="testimonial-star">&#9733;</span>
-          <span class="testimonial-star">&#9733;</span>
-          <span class="testimonial-star">&#9733;</span>
-          <span class="testimonial-star">&#9733;</span>
-        </div>
-        <p class="testimonial-text">"Working with David felt like talking to a friend who happens to be a brilliant writer. He took our conversations and turned them into chapters that made me cry. In a good way."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">C</div>
-          <div>
-            <div class="testimonial-name">Published Author</div>
-            <div class="testimonial-title">First-Time Writer</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================
-     FAQ
-     ======================================== -->
-<section class="faq" id="faq">
-  <div class="container">
-    <div class="faq-header">
-      <div class="section-label">Common Questions</div>
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <p class="section-subtitle">Everything you need to know about working with Book Your Brand.</p>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          How long does it take to write a book?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Most projects take 6 to 12 months from concept to published book. The timeline depends on your availability for conversations and review, the complexity of your story, and which service tier you choose. David works on 6-8 projects simultaneously, and each one gets dedicated attention on a consistent schedule.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          What is the "Done With You" method?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Unlike traditional ghost writing where someone else writes your book, the "Done With You" method means David coaches you through writing it yourself. Through weekly one-on-one sessions, he guides your concept development, provides chapter-by-chapter feedback, and helps you develop your craft as a writer. The result is a book that is authentically yours in voice, content, and authorship.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Do I need to be a good writer to work with you?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Not at all. Many of our authors have never written anything longer than an email. David's gift is extracting your story through conversation. You talk, he shapes the words. If you can tell your story out loud, David can help you turn it into a book. Your expertise and experiences are what matter, not your writing background.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Will the book sound like me or like a ghost writer?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>It will sound like you. That's David's superpower: taking a person's story and making it the reader's story while keeping the author's authentic voice. Every chapter starts from your words, your stories, your perspective. David's job is to elevate your voice, not replace it. Your friends and family should read it and hear you in every sentence.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Do you help with publishing and marketing?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Yes. Our "Done With You" and "Full Ghost Writing" packages include publishing guidance: ISBN registration, Amazon KDP setup, print and digital formatting, cover design, and bestseller launch strategy. The Full Ghost Writing package also includes Amazon advertising setup to give your book momentum from launch day. We walk you through every step so publishing feels simple, not overwhelming.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Can I see examples of books you've worked on?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Absolutely. David has authored over a dozen of his own books including international bestsellers, and has coached dozens of authors to publication. Check out the Portfolio section above for a sample of published works. During your free consultation, David can share specific examples relevant to your genre and goals.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================
-     CTA
-     ======================================== -->
-<section class="cta-section" id="contact">
-  <div class="container">
-    <div class="cta-content">
-      <div class="section-label">Ready to Start?</div>
-      <h2>Your Book Is <em>Waiting</em> to Be Written</h2>
-      <p class="cta-description">Book a free 30-minute consultation with David. No pressure, no pitch. Just an honest conversation about your story and whether working together makes sense.</p>
-      <div class="cta-buttons">
-        <a href="mailto:coaching@davidstrauss.com" class="btn btn-primary">Book a Free Consultation</a>
-        <a href="mailto:coaching@davidstrauss.com" class="btn btn-outline">Send a Message</a>
-      </div>
-      <p class="cta-note">coaching@davidstrauss.com</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================
-     FOOTER
-     ======================================== -->
+<!-- ====== FOOTER ====== -->
 <footer>
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-brand-text">Book Your <span>Brand</span></div>
-        <p class="footer-brand-description">Premium ghost writing and author coaching by David Lloyd Strauss. Turning entrepreneurs, thought leaders, and visionaries into published bestselling authors.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook">Fb</a>
-          <a href="#" aria-label="Instagram">Ig</a>
-          <a href="#" aria-label="LinkedIn">Li</a>
-          <a href="#" aria-label="YouTube">Yt</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-heading">Navigate</div>
-        <div class="footer-links">
-          <a href="#services">Services</a>
-          <a href="#process">Process</a>
-          <a href="#portfolio">Portfolio</a>
-          <a href="#about">About David</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-heading">Services</div>
-        <div class="footer-links">
-          <a href="#services">Ghost Writing</a>
-          <a href="#services">Author Coaching</a>
-          <a href="#services">Editing</a>
-          <a href="#services">Cover Design</a>
-          <a href="#services">Publishing</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-heading">Contact</div>
-        <div class="footer-links">
-          <a href="mailto:coaching@davidstrauss.com">coaching@davidstrauss.com</a>
-          <a href="#contact">Book a Consultation</a>
-          <a href="#faq">FAQ</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-copyright">&copy; 2026 Book Your Brand. All rights reserved.</div>
-      <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-      </div>
-    </div>
+    <p class="footer-tagline">V O X &ensp; · &ensp; V E R B U M &ensp; · &ensp; F A B U L A</p>
+    <p class="footer-tagline-translation">Voice &ensp;·&ensp; Word &ensp;·&ensp; Story</p>
+    <a href="mailto:david@bookyourbrand.com" class="footer-email">david@bookyourbrand.com</a>
+    <p class="footer-copyright">&copy; MMXXVI &ensp; David Lloyd Strauss &ensp;·&ensp; Book Your Brand</p>
   </div>
 </footer>
 
-<!-- ========================================
-     SCRIPTS
-     ======================================== -->
+<!-- ====== JS ====== -->
 <script>
-function toggleNav() {
-  document.getElementById('navLinks').classList.toggle('active');
-}
+// Nav scroll behavior
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 80);
+}, { passive: true });
 
-function toggleFaq(button) {
-  const item = button.parentElement;
-  const wasActive = item.classList.contains('active');
-
-  // Close all
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-
-  // Toggle clicked
-  if (!wasActive) {
-    item.classList.add('active');
-  }
-}
-
-// Close mobile nav on link click
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById('navLinks').classList.remove('active');
-  });
-});
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
   });
-});
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+reveals.forEach(el => observer.observe(el));
 </script>
 
 </body>
