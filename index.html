@@ -252,16 +252,16 @@ nav .container {
   min-height: calc(100vh - var(--nav-height));
   display: flex;
   align-items: center;
-  padding: 80px 0 120px;
+  padding: 80px 0 0;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero .container {
   display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 60px;
-  align-items: center;
+  grid-template-columns: 1fr 480px;
+  gap: 40px;
+  align-items: start;
 }
 
 .hero-content { max-width: 600px; }
@@ -347,12 +347,17 @@ nav .container {
   animation: fadeIn 0.9s ease-out 200ms forwards;
 }
 
+.hero-image {
+  margin-right: -60px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
 .hero-image img {
   width: 100%;
   height: auto;
-  max-height: 600px;
   object-fit: contain;
-  object-position: center top;
   filter: drop-shadow(0 20px 40px rgba(20, 24, 33, 0.1));
 }
 
@@ -824,38 +829,53 @@ footer {
 /* ========================================
    RESPONSIVE
    ======================================== */
+/* ---- TABLET (960px and below) ---- */
 @media (max-width: 960px) {
   section { padding: 80px 0; }
 
+  /* Hero: stack vertically, image on top */
+  .hero { overflow: hidden; padding: 60px 0 80px; }
   .hero .container {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
     text-align: center;
   }
   .hero-content { max-width: 100%; }
   .hero-text { max-width: 100%; margin-left: auto; margin-right: auto; }
   .hero-rule { margin-left: auto; margin-right: auto; }
   .hero-actions { justify-content: center; }
-  .hero-image { order: -1; }
-  .hero-image img { max-height: 360px; margin: 0 auto; }
+  .hero-image {
+    order: -1;
+    margin-right: 0;
+    margin-top: 0;
+  }
+  .hero-image img {
+    max-height: 400px;
+    width: auto;
+    margin: 0 auto;
+  }
 
+  /* Library: 3 columns on tablet */
   .library-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 28px 20px;
   }
 
+  /* About: stack vertically */
   .about .container {
     grid-template-columns: 1fr;
     gap: 48px;
   }
-  .about-image { max-width: 320px; margin: 0 auto; }
+  .about-image { max-width: 280px; margin: 0 auto; }
 
+  /* Craft: slightly smaller numerals */
   .craft-step {
     grid-template-columns: 60px 1fr;
     gap: 20px;
   }
   .craft-numeral { font-size: 44px; }
 
+  /* Book Types: 2 columns */
   .book-types-grid {
     grid-template-columns: repeat(2, 1fr);
     max-width: 600px;
@@ -865,9 +885,15 @@ footer {
     margin-left: 0;
   }
 
+  /* Testimonials: single column */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+
+  /* Nav: hamburger */
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
-
   .nav-links.open {
     display: flex;
     flex-direction: column;
@@ -883,28 +909,67 @@ footer {
   }
 }
 
+/* ---- PHONE (640px and below) ---- */
 @media (max-width: 640px) {
-  .library-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px 16px;
-  }
+  section { padding: 60px 0; }
 
+  /* Hero: tighter spacing */
+  .hero { padding: 40px 0 60px; }
+  .hero-headline { font-size: 38px; }
+  .hero-subtitle { font-size: 17px; }
+  .hero-text { font-size: 15px; }
+  .hero-image img { max-height: 320px; }
+  .hero-actions { flex-direction: column; gap: 16px; }
+
+  /* Credibility: vertical stack, no dots */
+  .credibility { padding: 32px 0; }
   .credibility .container {
     flex-direction: column;
     gap: 12px;
   }
   .credibility-dot { display: none; }
+  .credibility-svg { height: 16px; }
 
-  .hero-headline { font-size: 42px; }
+  /* Library: 2 columns */
+  .library-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 12px;
+  }
+  .book-title { font-size: 14px; }
 
+  /* About: full width, smaller drop cap */
+  .about { padding: 60px 0; }
+  .about-prose p:first-of-type::first-letter {
+    font-size: 3em;
+  }
+  .about-prose { font-size: 15px; }
+
+  /* Craft: stack numeral above text */
   .craft-step {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 4px;
+    margin-bottom: 48px;
   }
   .craft-numeral {
     text-align: left;
     font-size: 36px;
   }
+  .craft-step-title { font-size: 20px; }
+  .craft-step-text { font-size: 15px; }
+
+  /* Book Types: single column */
+  .book-types-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  .type-card { padding: 32px 24px; }
+
+  /* Final CTA */
+  .final-cta-headline { font-size: 28px; }
+
+  /* Footer */
+  .footer-email { font-size: 15px; word-break: break-all; }
+  .footer-copyright { font-size: 10px; letter-spacing: 1px; }
 }
 
 /* ========================================
