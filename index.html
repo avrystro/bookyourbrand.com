@@ -80,19 +80,18 @@ section { padding: 120px 0; }
 
 .section-label {
   font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--gilt);
+  color: var(--gilt-deep);
   margin-bottom: 12px;
 }
 
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(28px, 4vw, 42px);
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 500;
   color: var(--ink);
   margin-bottom: 24px;
 }
@@ -618,9 +617,9 @@ nav .container {
 }
 
 .testimonial-quote {
-  font-family: var(--font-display);
-  font-size: 17px;
-  font-style: italic;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-style: normal;
   line-height: 1.8;
   color: var(--ink-soft);
   margin-bottom: 24px;
@@ -921,14 +920,15 @@ footer {
   .hero-image img { max-height: 320px; }
   .hero-actions { flex-direction: column; gap: 16px; }
 
-  /* Credibility: vertical stack, no dots */
-  .credibility { padding: 32px 0; }
+  /* Credibility: wrap horizontally, smaller */
+  .credibility { padding: 28px 0; }
   .credibility .container {
-    flex-direction: column;
-    gap: 12px;
+    justify-content: center;
+    gap: 16px 12px;
   }
-  .credibility-dot { display: none; }
-  .credibility-svg { height: 16px; }
+  .credibility-item { font-size: 9px; letter-spacing: 1.5px; }
+  .credibility-svg { height: 14px; }
+  .credibility-dot { width: 2px; height: 2px; }
 
   /* Library: 2 columns */
   .library-grid {
@@ -1006,7 +1006,7 @@ footer {
     <div class="nav-links" id="navLinks">
       <a href="#library">Showcase</a>
       <a href="#about">About</a>
-      <a href="#book-types">Book Types</a>
+      <a href="#book-types">What We Write</a>
       <a href="mailto:david@bookyourbrand.com" class="nav-cta">Inquire</a>
     </div>
     <div class="nav-toggle" id="navToggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
@@ -1072,9 +1072,9 @@ footer {
       <div class="book-card reveal"><a href="books/old-new-true.html"><img class="book-cover" src="assets/images/old-new-true.jpg" alt="Old Wealth, New Wealth, True Wealth" loading="lazy"><p class="book-title">Old Wealth, New Wealth, True Wealth</p><p class="book-author">Sharon Lecter &amp; Nathan Gryp</p></a></div>
       <div class="book-card reveal"><a href="books/from-drifting-to-winning.html"><img class="book-cover" src="assets/images/from-drifting-to-winning.webp" alt="From Drifting to Winning" loading="lazy"><p class="book-title">From Drifting to Winning</p><p class="book-author">Avry Stroeve</p></a></div>
       <div class="book-card reveal"><a href="books/one-big-life.html"><img class="book-cover" src="assets/images/one-big-life.jpg" alt="One Big Life" loading="lazy"><p class="book-title">One Big Life</p><p class="book-author">Elaine</p></a></div>
-      <div class="book-card reveal"><a href="books/dancing-with-energy-vampires.html"><img class="book-cover" src="assets/images/dancing-with-energy-vampires.jpg" alt="Dancing with Energy Vampires" loading="lazy"><p class="book-title">Dancing with Energy Vampires</p><p class="book-author">David Lloyd Strauss</p></a></div>
-      <div class="book-card reveal"><a href="books/footsteps-after-the-fall.html"><img class="book-cover" src="assets/images/footsteps-after-the-fall.webp" alt="Footsteps After the Fall" loading="lazy"><p class="book-title">Footsteps After the Fall</p><p class="book-author">&nbsp;</p></a></div>
       <div class="book-card reveal"><a href="books/sabotage-to-success.html"><img class="book-cover" src="assets/images/sabotage-to-success.webp" alt="Sabotage to Success" loading="lazy"><p class="book-title">Sabotage to Success</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal"><a href="books/footsteps-after-the-fall.html"><img class="book-cover" src="assets/images/footsteps-after-the-fall.webp" alt="Footsteps After the Fall" loading="lazy"><p class="book-title">Footsteps After the Fall</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal"><a href="books/dancing-with-energy-vampires.html"><img class="book-cover" src="assets/images/dancing-with-energy-vampires.jpg" alt="Dancing with Energy Vampires" loading="lazy"><p class="book-title">Dancing with Energy Vampires</p><p class="book-author">David Lloyd Strauss</p></a></div>
       <div class="book-card reveal"><a href="books/second-mouse-gets-the-cheese.html"><img class="book-cover" src="assets/images/second-mouse-gets-the-cheese.webp" alt="The Second Mouse Gets the Cheese" loading="lazy"><p class="book-title">The Second Mouse Gets the Cheese</p><p class="book-author">&nbsp;</p></a></div>
       <div class="book-card reveal"><a href="books/unchained-wealth.html"><img class="book-cover" src="assets/images/unchained-wealth.webp" alt="Unchained Wealth" loading="lazy"><p class="book-title">Unchained Wealth</p><p class="book-author">&nbsp;</p></a></div>
       <div class="book-card reveal"><a href="books/embrace-special-needs.html"><img class="book-cover" src="assets/images/embrace-special-needs.jpg" alt="Embrace Special Needs" loading="lazy"><p class="book-title">Embrace Special Needs</p><p class="book-author">&nbsp;</p></a></div>
@@ -1148,12 +1148,16 @@ footer {
 <section class="testimonials">
   <div class="container">
     <div class="testimonials-header reveal">
-      <p class="section-label">W H A T &ensp; A U T H O R S &ensp; S A Y</p>
+      <p class="section-label">W H A T &ensp; C L I E N T S &ensp; S A Y</p>
     </div>
     <div class="testimonials-grid">
       <blockquote class="testimonial-card reveal">
         <p class="testimonial-quote">"Through the many life lessons he learned from his near-death experience, David masterfully empowers and inspires others to gain a fresh perspective of their life so that they can connect with their untapped personal power, enthusiasm, and sense of purpose. When David works with individuals, groups, or at live speaking engagements, his personal message brings a sense of certainty and confidence that changes lives."</p>
         <footer class="testimonial-attribution">Barb Wade</footer>
+      </blockquote>
+      <blockquote class="testimonial-card placeholder reveal">
+        <p class="testimonial-quote">"Your client testimonial goes here. Ask 2-3 of your best clients to share a few sentences about working with you and what the experience meant to them."</p>
+        <footer class="testimonial-attribution">Client Name, Book Title</footer>
       </blockquote>
       <blockquote class="testimonial-card testimonial-excerpt reveal">
         <p class="testimonial-quote">"We are not born with courage, but we are born with the potential to be courageous. Courage is not an everyday emotion. It is a reservoir of emotional strength to be drawn upon when we are ready to make a major change in our life. The change can be in any area of our life and will usually move us away from what we do not want and toward what we do want."</p>
@@ -1167,7 +1171,7 @@ footer {
 <section class="book-types" id="book-types">
   <div class="container">
     <div class="book-types-header reveal">
-      <p class="section-label">B O O K &ensp; T Y P E S</p>
+      <p class="section-label">W H A T &ensp; W E &ensp; W R I T E</p>
       <h2 class="section-title">Every book begins with a story worth telling</h2>
     </div>
     <p class="book-types-note reveal">Whether you are reflecting on a life well-lived, distilling years of hard-won wisdom, or giving shape to an idea that keeps you up at night, the first question is always the same: what kind of book wants to be written?</p>
@@ -1200,7 +1204,6 @@ footer {
     </div>
   </div>
 </section>
-
 <!-- ====== FINAL CTA ====== -->
 <section class="final-cta">
   <div class="container">
