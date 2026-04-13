@@ -436,7 +436,7 @@ nav .container {
 
 .stats-strip .container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   text-align: center;
 }
@@ -737,24 +737,27 @@ nav .container {
 }
 
 /* ========================================
-   TESTIMONIALS (Stacked Cards)
+   TESTIMONIALS — Correspondence Cards
+   Physical note cards on a linen desk.
    ======================================== */
 .testimonials {
   padding: 120px 0;
   background: var(--paper-warm);
+  overflow: hidden;
 }
 
 .testimonials-header {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 64px;
 }
 
 .testimonials-stack {
   position: relative;
-  max-width: 640px;
+  max-width: 580px;
   margin: 0 auto;
-  min-height: 320px;
+  min-height: 380px;
   cursor: pointer;
+  perspective: 1200px;
 }
 
 .testimonial-card {
@@ -762,61 +765,110 @@ nav .container {
   top: 0;
   left: 0;
   right: 0;
-  padding: 48px 44px;
-  background: var(--paper);
-  border-radius: 4px;
-  box-shadow: 0 2px 16px rgba(20, 24, 33, 0.06);
-  border: none;
+  padding: 52px 48px 44px;
+  background: #faf7f2;
+  border: 1px solid rgba(201, 165, 92, 0.12);
   margin: 0;
-  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
-              opacity 0.4s ease,
-              box-shadow 0.3s ease;
-  transform-origin: center top;
+  transition: all 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-origin: center bottom;
+  /* Layered shadow: contact shadow + ambient + lifted edge */
+  box-shadow:
+    0 1px 2px rgba(20, 24, 33, 0.04),
+    0 4px 12px rgba(20, 24, 33, 0.03),
+    0 0 0 1px rgba(20, 24, 33, 0.02);
+  /* Subtle inner border effect via inset shadow */
+  box-shadow:
+    inset 0 0 0 1px rgba(201, 165, 92, 0.06),
+    0 1px 2px rgba(20, 24, 33, 0.06),
+    0 6px 20px rgba(20, 24, 33, 0.04),
+    0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
-/* Stack offset: each card behind the one above */
-.testimonial-card:nth-child(1) { z-index: 3; transform: translateY(0) scale(1); }
-.testimonial-card:nth-child(2) { z-index: 2; transform: translateY(12px) scale(0.97); opacity: 0.7; }
-.testimonial-card:nth-child(3) { z-index: 1; transform: translateY(24px) scale(0.94); opacity: 0.4; }
-
-/* Fan out on hover */
-.testimonials-stack:hover .testimonial-card:nth-child(1) { transform: translateY(0) scale(1); box-shadow: 0 8px 32px rgba(20, 24, 33, 0.1); }
-.testimonials-stack:hover .testimonial-card:nth-child(2) { transform: translateY(20px) translateX(16px) scale(0.97) rotate(1.5deg); opacity: 0.85; }
-.testimonials-stack:hover .testimonial-card:nth-child(3) { transform: translateY(40px) translateX(-16px) scale(0.94) rotate(-1.5deg); opacity: 0.7; }
-
-/* Active state when clicked: selected card comes to front */
-.testimonial-card.active {
-  z-index: 10 !important;
-  transform: translateY(0) scale(1) !important;
-  opacity: 1 !important;
-  box-shadow: 0 12px 40px rgba(20, 24, 33, 0.12) !important;
+/* Gold top-edge accent — like a gilt-edged card */
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gilt-pale), var(--gilt), var(--gilt-pale), transparent);
+  opacity: 0.6;
 }
 
+/* Stack positions — tight, precise, physical */
+.testimonial-card:nth-child(1) {
+  z-index: 3;
+  transform: translateY(0) rotate(0deg);
+}
+.testimonial-card:nth-child(2) {
+  z-index: 2;
+  transform: translateY(8px) rotate(0.8deg);
+  opacity: 0.55;
+}
+.testimonial-card:nth-child(3) {
+  z-index: 1;
+  transform: translateY(16px) rotate(-0.5deg);
+  opacity: 0.3;
+}
+
+/* Fan out on hover — arc motion like spreading cards by hand */
+.testimonials-stack:hover .testimonial-card:nth-child(1) {
+  transform: translateY(-4px) rotate(0deg);
+  box-shadow:
+    inset 0 0 0 1px rgba(201, 165, 92, 0.08),
+    0 2px 4px rgba(20, 24, 33, 0.06),
+    0 12px 32px rgba(20, 24, 33, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.testimonials-stack:hover .testimonial-card:nth-child(2) {
+  transform: translateY(14px) translateX(24px) rotate(2.5deg);
+  opacity: 0.75;
+}
+.testimonials-stack:hover .testimonial-card:nth-child(3) {
+  transform: translateY(28px) translateX(-24px) rotate(-2deg);
+  opacity: 0.55;
+}
+
+/* Quote mark — positioned as a watermark, not a block element */
 .testimonial-card .quote-mark {
+  position: absolute;
+  top: 20px;
+  left: 40px;
   font-family: var(--font-display);
-  font-size: 64px;
+  font-size: 96px;
+  font-weight: 300;
   color: var(--gilt-pale);
-  line-height: 0.5;
-  margin-bottom: 16px;
-  display: block;
+  line-height: 1;
+  opacity: 0.35;
+  pointer-events: none;
+  user-select: none;
 }
 
 .testimonial-quote {
-  font-family: var(--font-body);
-  font-size: 16px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
   font-style: normal;
-  line-height: 1.8;
+  line-height: 1.75;
   color: var(--ink-soft);
-  margin-bottom: 24px;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
 }
 
 .testimonial-attribution {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--gilt);
+  color: var(--gilt-deep);
+  position: relative;
+  z-index: 1;
+  padding-top: 16px;
+  border-top: 1px solid rgba(201, 165, 92, 0.15);
+  display: inline-block;
 }
 
 .testimonial-attribution em {
@@ -827,20 +879,30 @@ nav .container {
 
 .testimonials-hint {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 72px;
   font-family: var(--font-body);
-  font-size: 12px;
-  letter-spacing: 1.5px;
+  font-size: 11px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--ink-fade);
-  opacity: 0.5;
+  opacity: 0.35;
+  transition: opacity 0.3s;
 }
 
+.testimonials-stack:hover ~ .testimonials-hint {
+  opacity: 0.6;
+}
+
+/* Mobile */
 @media (max-width: 640px) {
-  .testimonials-stack { min-height: 360px; }
-  .testimonial-card { padding: 32px 24px; }
-  .testimonials-stack:hover .testimonial-card:nth-child(2) { transform: translateY(16px) scale(0.97); }
-  .testimonials-stack:hover .testimonial-card:nth-child(3) { transform: translateY(32px) scale(0.94); }
+  .testimonials { padding: 80px 0; }
+  .testimonials-stack { min-height: 360px; max-width: 100%; }
+  .testimonial-card { padding: 40px 28px 36px; }
+  .testimonial-card .quote-mark { font-size: 72px; left: 24px; top: 14px; }
+  .testimonial-quote { font-size: 16px; }
+  .testimonials-stack:hover .testimonial-card:nth-child(2) { transform: translateY(12px) translateX(12px) rotate(1.5deg); }
+  .testimonials-stack:hover .testimonial-card:nth-child(3) { transform: translateY(24px) translateX(-12px) rotate(-1deg); }
+  .testimonials-hint { margin-top: 56px; }
 }
 
 /* ========================================
@@ -1152,11 +1214,7 @@ footer {
   }
 }
 
-  /* Stats strip: 2x2 on tablet */
-  .stats-strip .container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 32px;
-  }
+  /* Stats strip: still 3 across on tablet */
   .stat-number { font-size: 40px; }
 
   /* Pull quote: smaller */
@@ -1220,12 +1278,11 @@ footer {
   /* Final CTA */
   .final-cta-headline { font-size: 28px; }
 
-  /* Stats strip: single column on phone */
-  .stats-strip .container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px 24px;
-  }
-  .stat-number { font-size: 36px; }
+  /* Stats strip: 3 across on phone, smaller */
+  .stats-strip .container { gap: 16px; }
+  .stats-strip { padding: 40px 0; }
+  .stat-number { font-size: 28px; }
+  .stat-label { font-size: 9px; letter-spacing: 1px; }
 
   /* Pull quote */
   .pull-quote p { font-size: 20px; }
@@ -1338,10 +1395,6 @@ footer {
     <div class="stat-item reveal">
       <span class="stat-number" data-target="50" data-suffix="+">0</span>
       <span class="stat-label">Client Books Written</span>
-    </div>
-    <div class="stat-item reveal">
-      <span class="stat-number" data-target="6" data-suffix="">0</span>
-      <span class="stat-label">Media Networks Featured</span>
     </div>
   </div>
 </section>
