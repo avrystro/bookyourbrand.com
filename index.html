@@ -258,15 +258,26 @@ nav .container {
   align-items: start;
 }
 
-.hero-content { max-width: 600px; }
+.hero-content {
+  max-width: 600px;
+  position: relative;
+}
+
+.hero-crest {
+  width: 60px;
+  height: auto;
+  margin-bottom: 12px;
+  opacity: 0; transform: translateY(12px);
+  animation: fadeUp 0.4s ease-out 0ms forwards;
+}
 
 .hero-tagline {
   font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 5px;
   text-transform: uppercase;
-  color: var(--gilt);
+  color: var(--ink);
   margin-bottom: 28px;
   opacity: 0; transform: translateY(12px);
   animation: fadeUp 0.3s ease-out 0ms forwards;
@@ -359,40 +370,47 @@ nav .container {
    CREDIBILITY STRIP
    ======================================== */
 .credibility {
-  padding: 48px 0;
+  padding: 36px 0;
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
 }
 
 .credibility .container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.credibility-logos {
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
+  gap: 24px;
+  flex-wrap: nowrap;
 }
 
 .credibility-item {
   font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 600;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--ink-fade);
+  color: var(--ink-soft);
   display: flex;
   align-items: center;
 }
 
 .credibility-svg {
-  height: 20px;
+  height: 28px;
   width: auto;
-  opacity: 0.4;
-  filter: grayscale(100%) brightness(0.4);
+  opacity: 0.55;
+  filter: grayscale(100%) brightness(0.35);
   transition: opacity 0.2s, filter 0.2s;
 }
 
 .credibility-svg:hover {
-  opacity: 0.7;
+  opacity: 0.8;
   filter: grayscale(0%) brightness(1);
 }
 
@@ -401,6 +419,15 @@ nav .container {
   height: 3px;
   border-radius: 50%;
   background: var(--gilt);
+}
+
+.credibility-tagline {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gilt-deep);
 }
 
 /* ========================================
@@ -418,6 +445,45 @@ nav .container {
   height: 1px;
   background: var(--gilt);
   margin: 0 auto;
+}
+
+/* Quick Jump Bar */
+.quick-jump {
+  padding: 20px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-warm);
+}
+.quick-jump .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.quick-jump-link {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-fade);
+  padding: 8px 4px;
+  transition: color 0.2s ease;
+}
+.quick-jump-link:hover {
+  color: var(--gilt-deep);
+}
+.quick-jump-cta {
+  color: var(--gilt-deep);
+  font-weight: 600;
+  border: 1px solid var(--gilt);
+  padding: 8px 20px;
+  border-radius: 2px;
+}
+.quick-jump-cta:hover {
+  background: var(--gilt);
+  color: var(--ink);
 }
 
 /* ========================================
@@ -666,6 +732,34 @@ nav .container {
   line-height: 0.8;
   margin: 4px 12px 0 0;
   color: var(--gilt);
+}
+
+.about-stats {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--rule);
+}
+.about-stat {
+  display: flex;
+  flex-direction: column;
+}
+.about-stat-number {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--gilt-deep);
+  line-height: 1.1;
+}
+.about-stat-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-fade);
+  margin-top: 4px;
 }
 
 .about-credentials {
@@ -1040,9 +1134,45 @@ nav .container {
 /* ========================================
    FINAL CTA
    ======================================== */
+/* Video Section */
+.video-section { padding: 80px 0; }
+.video-header { text-align: center; margin-bottom: 32px; }
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(20, 24, 33, 0.12);
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 .final-cta {
   padding: 120px 0;
   text-align: center;
+}
+
+.crest-banner {
+  background: var(--ink);
+  border-radius: 8px;
+  padding: 32px 48px;
+  margin: 0 auto 40px;
+  display: inline-block;
+}
+.crest-banner-img {
+  width: 220px;
+  height: auto;
+  display: block;
 }
 
 .final-cta-headline {
@@ -1254,6 +1384,11 @@ footer {
   .craft-timeline-fill { height: 100% !important; }
 }
 
+/* Desktop: crest slightly larger */
+@media (min-width: 961px) {
+  .hero-crest { width: 80px; }
+}
+
 /* ========================================
    RESPONSIVE
    ======================================== */
@@ -1261,11 +1396,11 @@ footer {
 @media (max-width: 960px) {
   section { padding: 80px 0; }
 
-  /* Hero: stack vertically, image on top */
-  .hero { overflow: hidden; padding: 60px 0 80px; }
+  /* Hero: stack vertically, text first */
+  .hero { overflow: hidden; padding: 40px 0 60px; }
   .hero .container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 28px;
     text-align: center;
   }
   .hero-content { max-width: 100%; }
@@ -1273,7 +1408,7 @@ footer {
   .hero-rule { margin-left: auto; margin-right: auto; }
   .hero-actions { justify-content: center; }
   .hero-image {
-    order: -1;
+    order: 1;
     margin-right: 0;
     margin-top: 0;
   }
@@ -1335,68 +1470,116 @@ footer {
 
 /* ---- PHONE (640px and below) ---- */
 @media (max-width: 640px) {
-  section { padding: 60px 0; }
+  section { padding: 44px 0; }
 
-  /* Hero: tighter spacing */
-  .hero { padding: 40px 0 60px; }
-  .hero-headline { font-size: 38px; }
-  .hero-subtitle { font-size: 17px; }
-  .hero-text { font-size: 15px; }
-  .hero-image img { max-height: 320px; }
-  .hero-actions { flex-direction: column; gap: 16px; }
+  /* Hero: compact */
+  .hero { padding: 24px 0 0; }
+  .hero-image { border-bottom: 2px solid var(--gilt); }
+  .hero-image img { max-height: 340px; }
+  .hero-crest { width: 48px; margin-bottom: 8px; }
+  .hero-tagline { font-size: 9px; letter-spacing: 4px; margin-bottom: 12px; }
+  .hero-headline { font-size: 32px; margin-bottom: 8px; }
+  .hero-author { font-size: 10px; letter-spacing: 3px; margin-bottom: 4px; }
+  .hero-subtitle { font-size: 15px; margin-bottom: 12px; }
+  .hero-text { font-size: 14px; line-height: 1.6; margin-bottom: 16px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-rule { margin-bottom: 16px; }
+  .hero-image img { max-height: 280px; }
+  .hero-actions { flex-direction: column; gap: 12px; }
+  .hero-actions .btn { width: 100%; justify-content: center; padding: 14px 24px; min-height: 48px; font-size: 11px; }
 
-  /* Credibility: wrap horizontally, smaller */
-  .credibility { padding: 28px 0; }
-  .credibility .container {
-    justify-content: center;
-    gap: 16px 12px;
-  }
-  .credibility-item { font-size: 9px; letter-spacing: 1.5px; }
-  .credibility-svg { height: 14px; }
+  /* About stats: compact row on mobile */
+  .about-stats { flex-direction: row; gap: 20px; flex-wrap: wrap; }
+  .about-stat { flex-direction: column; gap: 2px; }
+  .about-stat-number { font-size: 24px; }
+  .about-stat-label { font-size: 9px; }
+
+  /* Credibility */
+  .credibility { padding: 20px 0; }
+  .credibility .container { gap: 8px; }
+  .credibility-logos { gap: 14px; flex-wrap: nowrap; }
+  .credibility-item { font-size: 11px; letter-spacing: 2px; }
+  .credibility-svg { height: 22px; }
   .credibility-dot { width: 2px; height: 2px; }
+  .credibility-tagline { font-size: 9px; letter-spacing: 2.5px; }
 
-  /* Library: 2 columns */
+  /* Section dividers: less space */
+  .section-divider { padding: 0; }
+
+  /* Library: 2 columns, compact */
   .library-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px 12px;
+    gap: 16px 10px;
   }
-  .book-title { font-size: 14px; }
+  .book-title { font-size: 13px; }
+  .book-author { font-size: 11px; }
+  .book-cover-wrap { margin-bottom: 8px; }
 
-  /* About: full width, smaller drop cap */
-  .about { padding: 60px 0; }
-  .about-prose p:first-of-type::first-letter {
-    font-size: 3em;
-  }
-  .about-prose { font-size: 15px; }
+  /* About: tighter */
+  .about { padding: 44px 0; }
+  .about-prose p:first-of-type::first-letter { font-size: 3em; }
+  .about-prose { font-size: 14px; line-height: 1.65; }
+  .about-prose p { margin-bottom: 14px; }
+  .pull-quote { padding: 20px; margin: 20px 0; }
+  .pull-quote p { font-size: 18px; }
 
-  /* Craft: stack numeral above text */
+  /* Craft: compact steps */
   .craft-step {
     grid-template-columns: 1fr;
     gap: 4px;
-    margin-bottom: 48px;
+    margin-bottom: 36px;
   }
-  .craft-numeral {
-    text-align: left;
-    font-size: 36px;
-  }
-  .craft-step-title { font-size: 20px; }
-  .craft-step-text { font-size: 15px; }
+  .craft-numeral { text-align: left; font-size: 28px; }
+  .craft-step-title { font-size: 18px; }
+  .craft-step-text { font-size: 14px; line-height: 1.6; }
+  .craft-header .section-title { font-size: 24px; }
+  .craft-header .section-intro { font-size: 14px; }
 
-  /* Tabs on phone */
-  .tabs-nav { flex-wrap: wrap; }
-  .tab-btn { font-size: 10px; padding: 10px 12px; letter-spacing: 1px; }
+  /* Tabs: full width, scrollable */
+  .tabs-nav { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; gap: 0; padding-bottom: 4px; }
+  .tab-btn { font-size: 10px; padding: 10px 14px; letter-spacing: 1px; white-space: nowrap; flex-shrink: 0; min-height: 44px; }
+  .tab-panel-title { font-size: 20px; }
+  .tab-panel-text { font-size: 14px; }
+  .tier-cta { min-height: 44px; display: inline-flex; align-items: center; }
 
-  /* Final CTA */
-  .final-cta-headline { font-size: 28px; }
+  /* Book types: tighter */
+  .book-types { padding: 44px 0; }
+  .book-types-header .section-title { font-size: 24px; }
+  .book-types-note { font-size: 14px; }
 
-  /* Stats strip: 3 across on phone, smaller */
+  /* Testimonials: compact */
+  .testimonials { padding: 44px 0; }
+  .testimonial-quote { font-size: 15px; line-height: 1.6; }
+  .testimonial-card { padding: 24px; }
+
+  /* Video: tighter on mobile */
+  .video-section { padding: 44px 0; }
+  .video-header { margin-bottom: 20px; }
+
+  /* Final CTA: compact */
+  .final-cta { padding: 48px 0; }
+  .final-cta-headline { font-size: 26px; }
+  .final-cta-sub { font-size: 14px; }
+  .crest-banner { padding: 24px 32px; }
+  .crest-banner-img { width: 140px; }
+
+  /* All buttons: touch-friendly */
+  .btn { min-height: 48px; padding: 14px 28px; }
+  .nav-cta { min-height: 44px; padding: 10px 16px; }
+
+  /* Section headers: tighter */
+  .section-label { font-size: 10px; letter-spacing: 2.5px; margin-bottom: 8px; }
+  .section-title { font-size: 24px; margin-bottom: 16px; }
+  .section-intro { font-size: 14px; }
+
+  /* Footer: compact */
+  footer { padding: 40px 0; }
+  .footer-tagline { font-size: 10px; }
+
+  /* Stats strip leftovers */
   .stats-strip .container { gap: 16px; }
   .stats-strip { padding: 40px 0; }
   .stat-number { font-size: 28px; }
   .stat-label { font-size: 9px; letter-spacing: 1px; }
-
-  /* Pull quote */
-  .pull-quote p { font-size: 20px; }
   .pull-quote::before { font-size: 60px; }
 
   /* Footer */
@@ -1436,10 +1619,12 @@ footer {
   <div class="container">
     <a href="#" class="nav-brand">Book Your Brand</a>
     <div class="nav-links" id="navLinks">
-      <a href="#library">Showcase</a>
+      <a href="#craft">Process</a>
+      <a href="#book-types">Publishing</a>
       <a href="#about">About</a>
-      <a href="#book-types">What We Write</a>
-      <a href="mailto:david@bookyourbrand.com" class="nav-cta">Inquire</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#library">Library</a>
+      <a href="mailto:david@bookyourbrand.com" class="nav-cta">Write That Book Already!</a>
     </div>
     <div class="nav-toggle" id="navToggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
       <span></span>
@@ -1454,22 +1639,23 @@ footer {
   <div class="hero-glow" id="heroGlow"></div>
   <div class="container">
     <div class="hero-content">
+      <img src="assets/images/david-strauss-herald-crest.webp" alt="David Lloyd Strauss Crest" class="hero-crest">
       <p class="hero-tagline">V O X &ensp; · &ensp; V E R B U M &ensp; · &ensp; F A B U L A</p>
       <h1 class="hero-headline" id="heroHeadline"><span class="word"><span class="word-inner">Voice.</span></span> <span class="word"><span class="word-inner">Word.</span></span> <span class="word"><span class="word-inner">Story.</span></span></h1>
       <p class="hero-author">D A V I D &ensp; L L O Y D &ensp; S T R A U S S</p>
       <p class="hero-subtitle">Professional Wordsmith</p>
-      <p class="hero-text">I take a person's story and make it the reader's story. For more than forty years, I have worked with authors, executives, and public figures to write books that position their experience as an answer to the problems their readers face. Every book begins with a conversation about what matters most to you and ends with a published work that carries your voice into the world.</p>
+      <p class="hero-text">I take your story and make it the reader's story. With forty years of literary experience and sixteen years working with authors, executives, and public figures, I write books that position your experience as an answer to the problems your readers face. Every book begins with a conversation about what matters most to you and ends with a published work that carries your voice into the world.</p>
       <div class="hero-rule"></div>
       <div class="hero-actions">
-        <a href="mailto:david@bookyourbrand.com" class="btn btn-primary btn-magnetic">Inquire</a>
-        <a href="#library" class="btn btn-ghost">
-          See the Library
+        <a href="mailto:david@bookyourbrand.com" class="btn btn-primary btn-magnetic">Write That Book Already!</a>
+        <a href="#craft" class="btn btn-ghost">
+          See How It Works
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
     </div>
     <div class="hero-image">
-      <img src="assets/images/david-strauss-headshot.png" alt="David Lloyd Strauss">
+      <img src="assets/images/david-strauss-two-books.png" alt="David Lloyd Strauss holding his books">
     </div>
   </div>
 </section>
@@ -1477,104 +1663,30 @@ footer {
 <!-- ====== CREDIBILITY STRIP ====== -->
 <section class="credibility">
   <div class="container">
-    <span class="credibility-item credibility-logo"><img src="assets/logos/nbc.svg" alt="NBC" class="credibility-svg"></span>
-    <span class="credibility-dot"></span>
-    <span class="credibility-item credibility-logo"><img src="assets/logos/cbs.svg" alt="CBS" class="credibility-svg"></span>
-    <span class="credibility-dot"></span>
-    <span class="credibility-item credibility-logo"><img src="assets/logos/fox.svg" alt="FOX" class="credibility-svg"></span>
-    <span class="credibility-dot"></span>
-    <span class="credibility-item">ABC</span>
-    <span class="credibility-dot"></span>
-    <span class="credibility-item">NPR</span>
-    <span class="credibility-dot"></span>
-    <span class="credibility-item credibility-logo"><img src="assets/logos/united-nations.svg" alt="United Nations" class="credibility-svg"></span>
-    <span class="credibility-dot"></span>
-    <span class="credibility-item">International Bestseller</span>
-  </div>
-</section>
-
-<!-- ====== STATS STRIP ====== -->
-<section class="stats-strip">
-  <div class="container">
-    <div class="stat-item reveal">
-      <span class="stat-number" data-target="40">0</span>
-      <span class="stat-label">Years of Experience</span>
+    <div class="credibility-logos">
+      <span class="credibility-item credibility-logo"><img src="assets/logos/nbc.svg" alt="NBC" class="credibility-svg"></span>
+      <span class="credibility-dot"></span>
+      <span class="credibility-item credibility-logo"><img src="assets/logos/cbs.svg" alt="CBS" class="credibility-svg"></span>
+      <span class="credibility-dot"></span>
+      <span class="credibility-item credibility-logo"><img src="assets/logos/fox.svg" alt="FOX" class="credibility-svg"></span>
+      <span class="credibility-dot"></span>
+      <span class="credibility-item">ABC</span>
+      <span class="credibility-dot"></span>
+      <span class="credibility-item">NPR</span>
     </div>
-    <div class="stat-item reveal">
-      <span class="stat-number" data-target="12">0</span>
-      <span class="stat-label">Own Books Published</span>
-    </div>
-    <div class="stat-item reveal">
-      <span class="stat-number" data-target="50" data-suffix="+">0</span>
-      <span class="stat-label">Client Books Written</span>
-    </div>
+    <p class="credibility-tagline">International Bestseller</p>
   </div>
 </section>
 
 <div class="section-divider"></div>
 
-<!-- ====== THE LIBRARY ====== -->
-<section class="library" id="library">
-  <div class="container">
-    <div class="library-header reveal">
-      <p class="section-label">S E L E C T E D &ensp; W O R K</p>
-      <h2 class="section-title">The Library</h2>
-      <p class="section-intro" style="margin: 0 auto;">Books I have helped bring into the world.</p>
-    </div>
-    <div class="library-grid">
-      <div class="book-card featured reveal" style="--i: 0"><a href="books/old-new-true.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/old-new-true.jpg" alt="Old Wealth, New Wealth, True Wealth" loading="lazy"></div><p class="book-title">Old Wealth, New Wealth, True Wealth</p><p class="book-author">Sharon Lecter &amp; Nathan Gryp</p></a></div>
-      <div class="book-card reveal" style="--i: 1"><a href="books/from-drifting-to-winning.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/from-drifting-to-winning.webp" alt="From Drifting to Winning" loading="lazy"></div><p class="book-title">From Drifting to Winning</p><p class="book-author">Avry Stroeve</p></a></div>
-      <div class="book-card featured reveal" style="--i: 2"><a href="books/one-big-life.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/one-big-life.jpg" alt="One Big Life" loading="lazy"></div><p class="book-title">One Big Life</p><p class="book-author">Elaine</p></a></div>
-      <div class="book-card featured reveal" style="--i: 3"><a href="books/sabotage-to-success.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/sabotage-to-success.webp" alt="Sabotage to Success" loading="lazy"></div><p class="book-title">Sabotage to Success</p><p class="book-author">&nbsp;</p></a></div>
-      <div class="book-card reveal" style="--i: 4"><a href="books/footsteps-after-the-fall.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/footsteps-after-the-fall.webp" alt="Footsteps After the Fall" loading="lazy"></div><p class="book-title">Footsteps After the Fall</p><p class="book-author">&nbsp;</p></a></div>
-      <div class="book-card reveal" style="--i: 5"><a href="books/dancing-with-energy-vampires.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/dancing-with-energy-vampires.jpg" alt="Dancing with Energy Vampires" loading="lazy"></div><p class="book-title">Dancing with Energy Vampires</p><p class="book-author">David Lloyd Strauss</p></a></div>
-      <div class="book-card reveal" style="--i: 6"><a href="books/second-mouse-gets-the-cheese.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/second-mouse-gets-the-cheese.webp" alt="The Second Mouse Gets the Cheese" loading="lazy"></div><p class="book-title">The Second Mouse Gets the Cheese</p><p class="book-author">&nbsp;</p></a></div>
-      <div class="book-card reveal" style="--i: 7"><a href="books/unchained-wealth.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/unchained-wealth.webp" alt="Unchained Wealth" loading="lazy"></div><p class="book-title">Unchained Wealth</p><p class="book-author">&nbsp;</p></a></div>
-      <div class="book-card reveal" style="--i: 8"><a href="books/embrace-special-needs.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/embrace-special-needs.jpg" alt="Embrace Special Needs" loading="lazy"></div><p class="book-title">Embrace Special Needs</p><p class="book-author">&nbsp;</p></a></div>
-      <div class="book-card reveal" style="--i: 9"><a href="books/what-if-today-were-the-day.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/what-if-today.webp" alt="What If Today Were the Day" loading="lazy"></div><p class="book-title">What If Today Were the Day</p><p class="book-author">&nbsp;</p></a></div>
-      <div class="book-card reveal" style="--i: 10"><a href="books/in-search-of-a-way-out.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/in-search-of-a-way-out.webp" alt="In Search of a Way Out" loading="lazy"></div><p class="book-title">In Search of a Way Out</p><p class="book-author">&nbsp;</p></a></div>
-      <div class="book-card reveal" style="--i: 11"><a href="books/stroke-of-love.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/stroke-of-love.jpg" alt="Stroke of Love" loading="lazy"></div><p class="book-title">Stroke of Love</p><p class="book-author">&nbsp;</p></a></div>
-      <div class="book-card reveal" style="--i: 12"><a href="books/who-are-you-fooling.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/who-are-you-fooling.webp" alt="Who Are You Fooling?" loading="lazy"></div><p class="book-title">Who Are You Fooling?</p><p class="book-author">&nbsp;</p></a></div>
-      <div class="book-card reveal" style="--i: 13"><a href="books/valentines-detox.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/valentines-detox.webp" alt="Valentine's Detox" loading="lazy"></div><p class="book-title">Valentine's Detox</p><p class="book-author">&nbsp;</p></a></div>
-      <div class="book-card reveal" style="--i: 14"><a href="books/7-ideas-that-changed-the-world.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/7-ideas-that-changed-the-world.webp" alt="7 Ideas That Changed the World" loading="lazy"></div><p class="book-title">7 Ideas That Changed the World</p><p class="book-author">&nbsp;</p></a></div>
-      <div class="book-card reveal" style="--i: 15"><a href="books/damon.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/damon.png" alt="Damon" loading="lazy"></div><p class="book-title">Damon</p><p class="book-author">&nbsp;</p></a></div>
-      <div class="book-card reveal" style="--i: 16"><a href="books/tgw.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/tgw.jpg" alt="TGW" loading="lazy"></div><p class="book-title">TGW</p><p class="book-author">&nbsp;</p></a></div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== ABOUT ====== -->
-<section class="about" id="about">
-  <div class="container">
-    <div class="about-image reveal">
-      <img src="assets/images/david-strauss-headshot.png" alt="David Lloyd Strauss">
-    </div>
-    <div class="about-content">
-      <p class="section-label reveal">T H E &ensp; W O R D S M I T H</p>
-      <h2 class="section-title reveal">Meet David</h2>
-      <div class="about-prose reveal">
-        <p>Books gave me a second chance at life. While visiting the ancient ruins at Chaco Canyon, New Mexico, I was struck by a rockfall to the head. The recovery was long and uncertain, and it changed the course of everything. It led me to write my first two books, <em>Footsteps After the Fall</em> and <em>Dancing with Energy Vampires</em>, and it set me on a path I have followed for more than forty years.</p>
-        <p>I am an internationally celebrated bestselling writer, editor, and author coach. I offer personalized coaching and writing services for aspiring writers who want to be the authentic authors of their book while benefiting from my writing and editing skills and four decades of literary experience. With over a dozen books of my own, and dozens more for clients, I provide expert guidance throughout the entire writing and editing process: concept development, structured outlining, manuscript coaching, developmental and line editing, proofreading, and step-by-step guidance through self-publishing.</p>
-        <p>I believe that when people are struggling in life and trying to figure things out, they will go to a book first, before they go to an actual person. They read books to help them make sense of life, to find answers, to feel less alone in whatever they are facing. In my world, I help people write books for the readers who are searching for those answers. We position your book as the answer to their problem.</p>
-        <p>Mentored by Sharon Lechter, Tony Robbins, and Bob Proctor, I believe the most important decision you will ever make is the people you choose to associate with. My work and story have been featured across major media outlets, including ABC, NBC, CBS, and FOX TV networks, NPR, and Success Today TV, as well as at a private reception at the United Nations and on dozens of podcasts, live stages, and webinars worldwide.</p>
-        <p>If you have a book inside you, I would like to hear about it.</p>
-      </div>
-      <div class="pull-quote reveal">
-        <p>I take a person's story and make it the reader's story.</p>
-      </div>
-      <p class="about-credentials reveal">David Strauss Inc. &ensp;·&ensp; Boulder, CO 80306 &ensp;·&ensp; 40+ Years</p>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- ====== THE CRAFT ====== -->
+<!-- ====== THE PROCESS ====== -->
 <section class="craft" id="craft">
   <div class="container">
     <div class="craft-header reveal">
-      <p class="section-label">T H E &ensp; C R A F T</p>
-      <h2 class="section-title">How a book comes to life</h2>
+      <p class="section-label">T H E &ensp; P R O C E S S</p>
+      <h2 class="section-title">How Your Book Comes to Life</h2>
+      <p class="section-intro" style="margin: 0 auto;">You bring the story. I bring over forty years of craft. Together, we build something neither of us could make alone.</p>
     </div>
     <div class="craft-steps" id="craftSteps">
       <div class="craft-timeline"><div class="craft-timeline-fill" id="craftTimelineFill"></div></div>
@@ -1582,22 +1694,69 @@ footer {
         <div class="craft-numeral">I</div>
         <div>
           <h3 class="craft-step-title">The Author Interview</h3>
-          <p class="craft-step-text">Our journey begins with a comprehensive author interview: eighteen carefully developed questions that I have refined over decades of working with authors. This is a deep creative exploration designed to surface your natural voice, clarify the heart of your message, and help you think like your reader from the very start. By the time you finish, you will have greater clarity about your book than you have ever had before.</p>
+          <p class="craft-step-text">Before we agree to work together, I offer you the opportunity to answer a series of carefully developed questions - a deep creative exploration designed to surface your voice, your message, and the heart of your story. From your answers, I write a complimentary sample introduction and working outline, bringing the vision of your book to life on the page for the very first time. This is your chance to interview me and my skills, just as I am getting to know you and your story. No commitment. No pressure. Just your book, alive in front of you.</p>
         </div>
       </div>
       <div class="craft-step reveal">
         <div class="craft-numeral">II</div>
         <div>
-          <h3 class="craft-step-title">The Sample Manuscript</h3>
-          <p class="craft-step-text">Based on your interview responses, I write a sample introduction and a complete working outline for your book, at no charge. This is your idea coming to life on the page for the very first time. You will see your story, your message, and your reader all reflected back to you in a way that is compelling, purposeful, and unmistakably yours.</p>
+          <h3 class="craft-step-title">The Writing</h3>
+          <p class="craft-step-text">Once we decide to work together, we write - weekly sessions over several months. You bring your stories, your insight, your voice. I shape the structure, sharpen the message, and make sure every chapter earns the next one. We go back and forth, like a tennis match with the manuscript, until what is on the page sounds unmistakably like you.</p>
         </div>
       </div>
       <div class="craft-step reveal">
         <div class="craft-numeral">III</div>
         <div>
-          <h3 class="craft-step-title">The Book</h3>
-          <p class="craft-step-text">We write together. Starting with the stories and ideas you feel most comfortable sharing, we build a full working manuscript within sixty days. Then we go chapter by chapter to refine your voice and sharpen your message, until every section serves your reader and the writing sounds like the best version of you. We play tennis with the manuscript, back and forth, until the book is done.</p>
+          <h3 class="craft-step-title">The Finished Manuscript</h3>
+          <p class="craft-step-text">The final manuscript is proofread, refined, and polished - every chapter earning its place, every sentence sounding like you. What you receive is a complete work, ready for publication through any path you choose.</p>
+          <p class="craft-step-text" style="margin-top: 12px; font-size: 15px; color: var(--ink-fade);">Ready to publish? We also offer full self-publishing support - interior design, formatting, cover coordination, and step-by-step guidance through publication. Many of my clients choose to continue working together through this stage.</p>
         </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="mailto:david@bookyourbrand.com" class="btn btn-primary reveal">Start the Conversation</a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====== WHAT WE WRITE (Horizontal Tabs) ====== -->
+<section class="book-types" id="book-types">
+  <div class="container">
+    <div class="book-types-header reveal">
+      <p class="section-label">W H A T &ensp; W E &ensp; W R I T E</p>
+      <h2 class="section-title">Every book begins with a story worth telling</h2>
+    </div>
+    <p class="book-types-note reveal">Whether you are reflecting on a life well-lived, distilling years of hard-won wisdom, or giving shape to an idea that keeps you up at night, the first question is always the same: what kind of book wants to be written?</p>
+
+    <div class="tabs-nav reveal" id="tabsNav">
+      <button class="tab-btn active" data-tab="memoir">Memoir</button>
+      <button class="tab-btn" data-tab="self-help">Self-Help</button>
+      <button class="tab-btn" data-tab="branding">Branding Book</button>
+      <button class="tab-btn" data-tab="journal">Journal / Workbook</button>
+    </div>
+
+    <div class="tabs-content reveal">
+      <div class="tab-panel active" data-tab="memoir">
+        <h3 class="tab-panel-title">Memoir</h3>
+        <p class="tab-panel-text">Your life has chapters that other people need to read. A memoir captures the experiences, turning points, and quiet revelations that shaped who you are, written so that readers see their own journey reflected in yours.</p>
+        <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
+      </div>
+      <div class="tab-panel" data-tab="self-help">
+        <h3 class="tab-panel-title">Self-Help</h3>
+        <p class="tab-panel-text">You have solved a problem that others are still struggling with. A self-help book positions your insight, your method, and your lived experience as a guide for readers searching for answers they have not been able to find on their own.</p>
+        <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
+      </div>
+      <div class="tab-panel" data-tab="branding">
+        <h3 class="tab-panel-title">Branding Book</h3>
+        <p class="tab-panel-text">A focused, compelling book that establishes you as the authority in your field. Part personal story, part professional vision - a branding book paints the big picture of who you are, what you stand for, and why people should listen. It is not a deep dive into content. It is a strategic introduction that opens doors, builds credibility, and positions you ahead of everyone else in your space.</p>
+        <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
+      </div>
+      <div class="tab-panel" data-tab="journal">
+        <h3 class="tab-panel-title">Journal / Workbook</h3>
+        <p class="tab-panel-text">A book that works alongside the reader. Journals and workbooks combine your expertise with structured exercises, prompts, and reflection spaces, giving readers a tool they return to again and again as they apply your ideas to their own life.</p>
+        <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
       </div>
     </div>
   </div>
@@ -1605,8 +1764,51 @@ footer {
 
 <div class="section-divider"></div>
 
+<!-- ====== ABOUT ====== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-image reveal">
+      <img src="assets/images/david-strauss-two-books.png" alt="David Lloyd Strauss holding his books">
+    </div>
+    <div class="about-content">
+      <p class="section-label reveal">T H E &ensp; W O R D S M I T H</p>
+      <h2 class="section-title reveal">Meet David</h2>
+      <div class="about-stats reveal">
+        <div class="about-stat"><span class="about-stat-number">40+</span><span class="about-stat-label">Years of Experience</span></div>
+        <div class="about-stat"><span class="about-stat-number">12</span><span class="about-stat-label">Own Books Published</span></div>
+        <div class="about-stat"><span class="about-stat-number">50+</span><span class="about-stat-label">Client Books Written</span></div>
+      </div>
+      <div class="about-prose reveal">
+        <p>Books gave me a second chance at life. While visiting the ancient ruins at Chaco Canyon, New Mexico, I was struck by a rockfall to the head. The recovery was long and uncertain, and it changed the course of everything. It led me to write my first two books, <em>Footsteps After the Fall</em> and <em>Dancing with Energy Vampires</em>, and it set me on a path to help bring other people's stories to life.</p>
+        <p>I believe that when people are struggling in life and trying to figure things out, they will go to a book first, before they go to an actual person. They read books to help them make sense of life, to find answers, to feel less alone in whatever they are facing. In my world, I help people write books for the readers who are searching for those answers. We position your book as the answer to their problem.</p>
+        <p>Mentored by Sharon Lechter, Tony Robbins, and Bob Proctor. Featured across ABC, NBC, CBS, FOX, NPR, the United Nations, and dozens of podcasts and live stages worldwide.</p>
+        <p>If you have a book inside you, I would like to hear about it.</p>
+      </div>
+      <div class="pull-quote reveal">
+        <p>I take a person's story and make it the reader's story.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====== VIDEO ====== -->
+<section class="video-section" id="video">
+  <div class="container">
+    <div class="video-header reveal">
+      <p class="section-label">S E E &ensp; D A V I D &ensp; I N &ensp; A C T I O N</p>
+    </div>
+    <div class="video-wrapper reveal">
+      <iframe src="https://www.youtube.com/embed/-sxtYcW-EI0" title="David Lloyd Strauss" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- ====== TESTIMONIALS (Stacked Cards) ====== -->
-<section class="testimonials">
+<section class="testimonials" id="testimonials">
   <div class="container">
     <div class="testimonials-header reveal">
       <p class="section-label">W H A T &ensp; C L I E N T S &ensp; S A Y</p>
@@ -1634,59 +1836,38 @@ footer {
 
 <div class="section-divider"></div>
 
-<!-- ====== WHAT WE WRITE (Horizontal Tabs) ====== -->
-<section class="book-types" id="book-types">
+<!-- ====== THE LIBRARY ====== -->
+<section class="library" id="library">
   <div class="container">
-    <div class="book-types-header reveal">
-      <p class="section-label">W H A T &ensp; W E &ensp; W R I T E</p>
-      <h2 class="section-title">Every book begins with a story worth telling</h2>
+    <div class="library-header reveal">
+      <p class="section-label">S E L E C T E D &ensp; W O R K</p>
+      <h2 class="section-title">The Library</h2>
+      <p class="section-intro" style="margin: 0 auto;">Books I have helped bring into the world.</p>
     </div>
-    <p class="book-types-note reveal">Whether you are reflecting on a life well-lived, distilling years of hard-won wisdom, or giving shape to an idea that keeps you up at night, the first question is always the same: what kind of book wants to be written?</p>
-
-    <div class="tabs-nav reveal" id="tabsNav">
-      <button class="tab-btn active" data-tab="memoir">Memoir</button>
-      <button class="tab-btn" data-tab="self-help">Self-Help</button>
-      <button class="tab-btn" data-tab="autobiography">Autobiography</button>
-      <button class="tab-btn" data-tab="novel">Novel</button>
-      <button class="tab-btn" data-tab="journal">Journal</button>
+    <div class="library-grid">
+      <div class="book-card featured reveal" style="--i: 0"><a href="books/old-new-true.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/old-new-true.jpg" alt="Old Wealth, New Wealth, True Wealth" loading="lazy"></div><p class="book-title">Old Wealth, New Wealth, True Wealth</p><p class="book-author">Sharon Lecter &amp; Nathan Gryp</p></a></div>
+      <div class="book-card reveal" style="--i: 1"><a href="books/from-drifting-to-winning.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/from-drifting-to-winning.webp" alt="From Drifting to Winning" loading="lazy"></div><p class="book-title">From Drifting to Winning</p><p class="book-author">Avry Stroeve</p></a></div>
+      <div class="book-card featured reveal" style="--i: 2"><a href="books/one-big-life.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/one-big-life.jpg" alt="One Big Life" loading="lazy"></div><p class="book-title">One Big Life</p><p class="book-author">Elaine</p></a></div>
+      <div class="book-card featured reveal" style="--i: 3"><a href="books/sabotage-to-success.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/sabotage-to-success.webp" alt="Sabotage to Success" loading="lazy"></div><p class="book-title">Sabotage to Success</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal" style="--i: 4"><a href="books/dancing-with-energy-vampires.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/dancing-with-energy-vampires.jpg" alt="Dancing with Energy Vampires" loading="lazy"></div><p class="book-title">Dancing with Energy Vampires</p><p class="book-author">David Lloyd Strauss</p></a></div>
+      <div class="book-card reveal" style="--i: 5"><a href="books/unchained-wealth.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/unchained-wealth.webp" alt="Unchained Wealth" loading="lazy"></div><p class="book-title">Unchained Wealth</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal" style="--i: 6"><a href="books/second-mouse-gets-the-cheese.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/second-mouse-gets-the-cheese.webp" alt="The Second Mouse Gets the Cheese" loading="lazy"></div><p class="book-title">The Second Mouse Gets the Cheese</p><p class="book-author">&nbsp;</p></a></div>
+      <div class="book-card reveal" style="--i: 7"><a href="books/embrace-special-needs.html"><div class="book-cover-wrap"><img class="book-cover" src="assets/images/embrace-special-needs.jpg" alt="Embrace Special Needs" loading="lazy"></div><p class="book-title">Embrace Special Needs</p><p class="book-author">&nbsp;</p></a></div>
     </div>
-
-    <div class="tabs-content reveal">
-      <div class="tab-panel active" data-tab="memoir">
-        <h3 class="tab-panel-title">Memoir</h3>
-        <p class="tab-panel-text">Your life has chapters that other people need to read. A memoir captures the experiences, turning points, and quiet revelations that shaped who you are, written so that readers see their own journey reflected in yours.</p>
-        <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
-      </div>
-      <div class="tab-panel" data-tab="self-help">
-        <h3 class="tab-panel-title">Self-Help</h3>
-        <p class="tab-panel-text">You have solved a problem that others are still struggling with. A self-help book positions your insight, your method, and your lived experience as a guide for readers searching for answers they have not been able to find on their own.</p>
-        <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
-      </div>
-      <div class="tab-panel" data-tab="autobiography">
-        <h3 class="tab-panel-title">Autobiography</h3>
-        <p class="tab-panel-text">The full arc of a life, told in your voice. An autobiography is a comprehensive account of where you have been, what you have built, and what you have learned along the way. It is the book people will reach for when they want to understand how you became who you are.</p>
-        <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
-      </div>
-      <div class="tab-panel" data-tab="novel">
-        <h3 class="tab-panel-title">Novel</h3>
-        <p class="tab-panel-text">Some truths are best told through fiction. A novel lets you explore ideas, emotions, and human experiences through characters and narrative, giving your message a form that readers carry with them long after the last page.</p>
-        <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
-      </div>
-      <div class="tab-panel" data-tab="journal">
-        <h3 class="tab-panel-title">Journal / Workbook</h3>
-        <p class="tab-panel-text">A book that works alongside the reader. Journals and workbooks combine your expertise with structured exercises, prompts, and reflection spaces, giving readers a tool they return to again and again as they apply your ideas to their own life.</p>
-        <a href="mailto:david@bookyourbrand.com" class="tier-cta">Inquire &rarr;</a>
-      </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="books/old-new-true.html" class="btn btn-ghost reveal" onclick="return false;" style="cursor: default; opacity: 0.7;">View the Complete Library (17 titles) &rarr;</a>
     </div>
   </div>
 </section>
 <!-- ====== FINAL CTA ====== -->
 <section class="final-cta">
   <div class="container">
-    <div class="asterism">&#x2042;</div>
-    <h2 class="final-cta-headline reveal">Your story deserves a great book.</h2>
-    <p class="final-cta-sub reveal">Let's talk about what yours could become.</p>
-    <a href="mailto:david@bookyourbrand.com" class="btn btn-primary reveal">Inquire</a>
+    <div class="crest-banner reveal">
+      <img src="assets/images/david-strauss-herald-crest.webp" alt="David Lloyd Strauss Crest" class="crest-banner-img">
+    </div>
+    <h2 class="final-cta-headline reveal">Write That Book Already!</h2>
+    <p class="final-cta-sub reveal">The struggle of turning what is in your head into what belongs on a page - that is exactly what I solve. Let's talk.</p>
+    <a href="mailto:david@bookyourbrand.com" class="btn btn-primary reveal">Start the Conversation</a>
   </div>
 </section>
 
