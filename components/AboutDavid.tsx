@@ -32,7 +32,7 @@ export function AboutDavid() {
     <section id="about" className="py-28">
       <Container>
         <div className="grid md:grid-cols-[400px_1fr] gap-16 items-start">
-          <div className="sticky top-24">
+          <div>
             <Image
               src="/assets/images/david-strauss-two-books.png"
               alt="David Lloyd Strauss holding his books"
