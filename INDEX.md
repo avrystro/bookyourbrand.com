@@ -1,68 +1,28 @@
-# Book Your Brand — Website
+# Book Your Brand — Next.js Migration
 
-David Lloyd Strauss's ghost writing business website. Static HTML/CSS, vanilla JS, deployed to Vercel.
+**Status:** Stage A in progress. Scaffold complete. Porting components per PLAN-phase-2.md.
 
-## Status
+**Branch:** `migration/nextjs`
+**Worktree:** `~/Developer/bookyourbrand.com-nextjs/`
+**Live static site (reference):** `~/Developer/bookyourbrand.com/` on `main`
+**Deploy target:** Vercel preview
+**Brain:** `~/Developer/app.avry/consulting/David Strauss/bookyourbrand/`
 
-**Phase:** 1 — Showcase Website Rebuild (Light Literary Aesthetic)
-**Branch:** `redesign/light-literary` (in development; existing dark build remains on `main`)
-**Deploy:** Vercel preview URL only — domain `bookyourbrand.com` NOT yet connected
-**Reference site:** [markdavidgerson.com](https://www.markdavidgerson.com/)
+## Stack
 
-## Brain
+Next.js 16.2 · React 19.2 · TypeScript 5 · Tailwind CSS v4 · Playwright · Prettier
 
-All planning, decisions, vision, pipeline, sources, and architectural thinking live in the brain dir:
+## Commands
 
+```bash
+npm run dev                          # local dev on :3000
+npm run build                        # production build
+npm run lint                         # ESLint
+npx prettier --write .               # format
+npx playwright test                  # visual regression (requires dev server running)
+npx playwright test --update-snapshots  # refresh baseline screenshots
 ```
-~/Developer/app.avry/consulting/David Strauss/bookyourbrand/
-```
 
-**Read these brain files before working on this codebase:**
+## Progress
 
-| File | What it contains |
-|---|---|
-| `PROJECT.md` | The 9-stage BYB pipeline, horizons, non-negotiables, sources. Authoritative definition. |
-| `PLAN.md` | **Current phase build plan.** Creative brief, sitemap, wireframes, style tile, build sequence, Definition of Done. |
-| `INDEX.md` (brain) | Navigation and overall project status |
-| `HANDOFF.md` | Active session state and next actions |
-| `OFFER.md` | Pricing tiers reference |
-| `material/author-interview-18-questions.md` | David's 18-question form (used in Phase 2) |
-| `material/david-strauss-byb-client-journey.pdf` | David's own client journey PDF |
-
-The brain/body split rule: planning and decisions stay in the brain, code and dev onboarding stay in the body. See `~/Developer/app.avry/rules/architecture.md` for the full convention.
-
-## Key Files (Body)
-
-| File | Purpose |
-|------|---------|
-| `index.html` | Homepage — single-page, anchored sections (Phase 1 will rewrite this on the redesign branch) |
-| `books/` | 17 individual book pages |
-| `assets/images/` | Book covers + David's headshot |
-| `AGENTS.md` | Universal AI agent instructions — points back to brain |
-| `README.md` | Developer onboarding |
-
-## Phase 1 Backlog
-
-Tracked in detail in `PLAN.md` (brain). Summary:
-
-- [ ] Pre-flight: AGENTS.md and INDEX.md updated to point to brain (this file is part of that)
-- [ ] Pre-flight: David's transparent headshot copied to `assets/images/`
-- [ ] Pre-flight: Avry's sign-off on PLAN.md
-- [ ] Build: New homepage on `redesign/light-literary` branch
-- [ ] Build: Restyle 17 book pages to match new theme
-- [ ] Build: Favicon + Open Graph image
-- [ ] Build: Mobile QA (375px / 768px / 1440px)
-- [ ] Ship: Deploy branch to Vercel preview URL
-- [ ] Ship: Send David the URL for approval
-
-## Phase 2 (Deferred)
-
-The AI Sample Writing Tool — David's 18-question form embedded in the website with a Claude API backend that generates a sample manuscript for prospects in real-time. Plan TBD.
-
-## Phase 3 (Deferred)
-
-Real domain connection (`bookyourbrand.com` → Vercel) after David approves the Phase 1 design.
-
-## Out of Scope
-
-n8n workflows, Bookalope integration, ElevenLabs, CRM, book editor — all live in PROJECT.md horizons 2 and 3 in the brain. Not part of this code repo.
+See `~/Developer/app.avry/consulting/David Strauss/bookyourbrand/PLAN-phase-2.md` for task-by-task state.

@@ -1,33 +1,24 @@
-# Book Your Brand
+# bookyourbrand.com
 
-Static website for David Strauss's ghost writing and author coaching business.
+David Lloyd Strauss's ghost writing business website. Next.js 16 + TypeScript + Tailwind v4, deployed on Vercel.
 
-## Quick Start
+**VOX · VERBUM · FABULA — Voice · Word · Story**
 
-No build step required. Open `index.html` in a browser or deploy to any static host.
+## Local development
 
 ```bash
-# Local development
-open index.html
-
-# Or use any static server
-npx serve .
+npm install
+npm run dev
 ```
 
-## Deploy
+Open http://localhost:3000
 
-Deployed to Vercel. Push to `main` to trigger deploy.
+## Docs
 
-## Structure
+- `AGENTS.md` — AI agent context, stack, non-negotiables
+- `INDEX.md` — project status and commands
+- Brain: `~/Developer/app.avry/consulting/David Strauss/bookyourbrand/` (SPEC, PLAN, PROJECT)
 
-```
-index.html          # Homepage
-assets/
-  images/           # Book covers, headshots, etc.
-CLAUDE.md           # AI context
-INDEX.md            # Project status
-```
+## Current phase
 
-## Brand
-
-Premium literary aesthetic. Deep charcoal + warm gold + cream. Playfair Display headings, Inter body text. See `CLAUDE.md` for full brand specs.
+Phase 2: Next.js migration on branch `migration/nextjs`. Static HTML version lives on `main` until David approves the preview URL.
