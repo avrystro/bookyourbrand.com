@@ -5,6 +5,7 @@ import { Process } from '@/components/Process'
 import { BookTypes } from '@/components/BookTypes'
 import { AboutDavid } from '@/components/AboutDavid'
 import { VideoSection } from '@/components/VideoSection'
+import { TestimonialStack } from '@/components/TestimonialStack'
 import { FinalCTA } from '@/components/FinalCTA'
 import { Footer } from '@/components/Footer'
 
@@ -19,6 +20,7 @@ export default function Home() {
         <BookTypes />
         <AboutDavid />
         <VideoSection />
+        <TestimonialStack />
         <FinalCTA />
       </main>
       <Footer />
