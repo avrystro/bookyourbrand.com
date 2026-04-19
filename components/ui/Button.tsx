@@ -12,7 +12,7 @@ type ButtonProps = {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-gold text-ink px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase ' +
+    'bg-gold text-ink px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase whitespace-nowrap ' +
     'hover:bg-gold-dark transition-colors duration-200 inline-block',
   ghost:
     'text-gold text-sm font-semibold tracking-[0.15em] uppercase inline-flex items-center gap-2 ' +
